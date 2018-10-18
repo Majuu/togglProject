@@ -3,19 +3,19 @@
   width: 100%;
   height: 1250px;
 }
-.green-bckgrnd {
-  background-color: #88CF8F;
+.pink-bckgrnd {
+  background-color: #FEEEDE;
   width: 100%;
   height: 720px;
   text-align: center
 }
 .big-text {
-  color: #FFFFFF;
+  color: #282A2D;
   font-size: 53px;
   padding-top: -10px
 }
 .small-text {
-  color: #FFFFFF;
+  color: #282A2D;
   font-size: 17px;
   margin-top: -10px;
   margin-bottom: 40px
