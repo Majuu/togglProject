@@ -1,6 +1,12 @@
 .right-menu {
   cursor: pointer;
-  margin: 10px
+  margin: 10px;
+  color: #282A2D;
+}
+.right-menu-dis {
+  cursor: not-allowed;
+  margin: 10px;
+  color: #282A2D;
 }
 .navbar-brand {
   font-size:35px;

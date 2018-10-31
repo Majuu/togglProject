@@ -50,5 +50,29 @@
 .red-button-fill {
   color: white;
   padding-top: 14px;
+  font-size: 14px;
+}
+.white-button {
+  cursor: not-allowed;
+  margin-left: 124px;
+  margin-top: 70px;
+  background-color: #FFFFFF;
+  width: 65%;
+  height: 50px;
+  border: 3px #F1F4F6 solid;
+  border-radius: 25px;
+}
+.white-button-fill {
+  color: black;
+  padding-top: 14px;
   font-size: 14px
+}
+.text-form {
+  background-color: #E3E8EB;
+  width: 65%;
+  margin: auto;
+  height: 70px
+}
+.passwd-label {
+  margin-top: 55px
 }
