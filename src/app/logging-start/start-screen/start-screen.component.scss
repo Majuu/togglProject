@@ -28,9 +28,10 @@
   border-radius: 5px
 }
 .data-label {
+  width: 65%;
   font-size: 11px;
-  margin-top: 100px;
-  margin-left: 122px
+  text-align: left;
+  margin: 100px auto auto;
 }
 .forms {
   background-color: #E3E8EB;
@@ -40,8 +41,7 @@
 }
 .red-button {
   cursor: pointer;
-  margin-left: 124px;
-  margin-top: 120px;
+  margin: 120px auto auto;
   background-color: #E24F54;
   width: 65%;
   height: 50px;
@@ -54,8 +54,7 @@
 }
 .white-button {
   cursor: not-allowed;
-  margin-left: 124px;
-  margin-top: 70px;
+  margin: 1% auto auto;
   background-color: #FFFFFF;
   width: 65%;
   height: 50px;
@@ -75,4 +74,9 @@
 }
 .passwd-label {
   margin-top: 55px
+}
+.orstyle {
+  color: #A2A2A2;
+  font-size: 14px;
+  padding-top: 3%
 }

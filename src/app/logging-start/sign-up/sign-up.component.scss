@@ -28,9 +28,10 @@
   border-radius: 5px
 }
 .data-label {
+  width: 65%;
   font-size: 11px;
-  margin-top: 100px;
-  margin-left: 122px
+  text-align: left;
+  margin: 100px auto auto;
 }
 .forms {
   background-color: #E3E8EB;
@@ -40,8 +41,7 @@
 }
 .red-button {
   cursor: pointer;
-  margin-left: 124px;
-  margin-top: 120px;
+  margin: 7% auto auto;
   background-color: #E24F54;
   width: 65%;
   height: 50px;
@@ -51,4 +51,33 @@
   color: white;
   padding-top: 14px;
   font-size: 14px
+}
+.white-button {
+  cursor: not-allowed;
+  margin: 3% auto auto;
+  background-color: #FFFFFF;
+  width: 65%;
+  height: 50px;
+  border: 3px #F1F4F6 solid;
+  border-radius: 25px;
+}
+.white-button-fill {
+  color: black;
+  padding-top: 14px;
+  font-size: 14px
+}
+.forms {
+  background-color: #E3E8EB;
+  width: 65%;
+  margin: auto;
+  height: 70px
+}
+.data-label2 {
+  width: 65%;
+  font-size: 11px;
+  text-align: left;
+  margin: 55px auto auto;
+}
+.checkbox-add {
+  margin-top: 10%
 }

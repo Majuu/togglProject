@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-navbar-start',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarStartComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+this.changeColGreen();
+console.log(this.router.url);
+  }
+  changeColGreen() {
+    document.body.style.backgroundColor = '#88CF8F';
+  }
+  changeColPink() {
+    document.body.style.backgroundColor = '#FEEEDE';
   }
 
 }

@@ -1,9 +1,10 @@
-<nav class="navbar navbar-default" style="background-color:#88CF8F">
 
-  <div class="container-fluid">
+<nav class="navbar navbar-default">
+
+      <div class="container-fluid">
     <div class="navbar-header">
       <a href="#" class="navbar-brand">
-        <i class="fa fa-power-off" style="font-size:30px; color: #E1393F; margin: 10px"></i>
+        <i class="fa fa-power-off powerOnOff"></i>
         <b>toggl</b></a>
     </div>
 
@@ -13,10 +14,10 @@
         <a class="right-menu-dis" role="button"><b>Features</b></a>
         <a class="right-menu-dis" role="button"><b>Pricing</b></a>
         <a class="right-menu-dis" role="button"><b>Training</b></a>
-        <a class="right-menu" role="button" routerLink="/login"><b>Log in</b></a>
-        <a class="right-menu" role="button" routerLink="/signup"><b>Sign up</b></a>
+        <a class="right-menu" role="button" routerLink="/login" (click)="changeColGreen()"><b>Log in</b></a>
+        <a class="right-menu" role="button" routerLink="/signup" (click)="changeColPink()"><b>Sign up</b></a>
       </li>
     </ul>
   </div>
   </div>
-</nav>
+  </nav>
