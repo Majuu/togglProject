@@ -13,6 +13,7 @@ import { TimerComponent } from './running-app/timer/timer.component';
 import { DashboardComponent } from './running-app/dashboard/dashboard.component';
 import { LoggingStartComponent } from './logging-start/logging-start.component';
 import { RunningAppComponent } from './running-app/running-app.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { RunningAppComponent } from './running-app/running-app.component';
     DashboardComponent,
     LoggingStartComponent,
     RunningAppComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

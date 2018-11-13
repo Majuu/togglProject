@@ -6,15 +6,75 @@
       <b>toggl</b></a>
   </div>
 
+
+  <!--TOP NAVBAR-->
   <div>
-    <ul style="list-style: none" class="menuElements">
-    <li><a class="" role="button"><i class="fa fa-clock-o"></i>Timer</a></li>
-    <li><a class="" role="button"><i class="fa fa-bar-chart-o"></i>Dashboard</a></li>
-    <li><a class="" role="button"><i class="fa fa-file"></i>Reports</a></li>
-    <li><a class="" role="button"><i class="fa fa-line-chart"></i>Insights</a></li>
-    <li><a class="" role="button"><i class="fa fa-star"></i>Saved Reports</a></li>
-    </ul>
+    <ul class="navbar nav">
+
+      <div class="menu-element">
+        <li routerLinkActive="active">
+          <a class="menu-item" role="button" routerLink="/home/timer"><i class="fa fa-clock-o symbol"></i>Timer</a></li>
+      </div>
+
+      <div class="menu-element">
+        <li routerLinkActive="active">
+          <a class="menu-item" role="button" routerLink="/home/dashboard"><i class="fa fa-bar-chart-o symbol"></i>Dashboard</a></li>
+      </div>
+
+      <div class="menu-element">
+        <li routerLinkActive="active">
+          <a class="menu-item" role="button" routerLink="/home/reports"><i class="fa fa-file symbol"></i>Reports</a></li>
+      </div>
+
+      <div class="menu-element">
+        <li routerLinkActive="active">
+          <a class="menu-item" role="button" routerLink="/home/insights"><i class="fa fa-line-chart symbol"></i>Insights</a></li>
+      </div>
+
+      <div class="menu-element">
+        <li routerLinkActive="active">
+          <a class="menu-item" role="button" routerLink="/home/saved"><i class="fa fa-star symbol"></i>Saved Reports</a></li>
+      </div>
+
+       </ul>
   </div>
 
 
+<!--BOTTOM NAVBAR-->
+<div>
+  <p style="color: #787878; font-size: 12px; margin-left: 15%; margin-top: 8%; margin-bottom: -6%"><b>MANAGE</b></p>
+  <ul class="navbar nav">
+
+    <div class="menu-element">
+      <li routerLinkActive="active">
+        <a class="menu-item" role="button" routerLink="/home/projects"><i class="fa fa-folder symbol"></i>Projects</a></li>
+    </div>
+
+    <div class="menu-element">
+      <li routerLinkActive="active">
+        <a class="menu-item" role="button" routerLink="/home/clients"><i class="fa fa-address-card symbol"></i>Clients</a></li>
+    </div>
+
+    <div class="menu-element">
+      <li routerLinkActive="active">
+        <a class="menu-item" role="button" routerLink="/home/team"><i class="fa fa-users symbol"></i>Team</a></li>
+    </div>
+
+    <div class="menu-element">
+      <li routerLinkActive="active">
+        <a class="menu-item" role="button" routerLink="/home/workspaces"><i class="fa fa-briefcase symbol"></i>Workspaces</a></li>
+    </div>
+
+    <div class="menu-element">
+      <li routerLinkActive="active">
+        <a class="menu-item" role="button" routerLink="/home/tags"><i class="fa fa-tag symbol"></i>Tags</a></li>
+    </div>
+
+    <div class="menu-element">
+      <li routerLinkActive="active">
+        <a class="menu-item" role="button" routerLink="/home/help"><i class="fa fa-question-circle symbol"></i>Help</a></li>
+    </div>
+  </ul>
+  <p style="color: #7F7F7F; font-size: 15px; margin-left: 10%; margin-top: -5%"><i class="fa fa-caret-down symbol"></i>Show more</p>
+</div>
 </div>

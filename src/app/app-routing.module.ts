@@ -7,6 +7,7 @@ import {TimerComponent} from './running-app/timer/timer.component';
 import {DashboardComponent} from './running-app/dashboard/dashboard.component';
 import {LoggingStartComponent} from './logging-start/logging-start.component';
 import {RunningAppComponent} from './running-app/running-app.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
   {    path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -24,7 +25,7 @@ const appRoutes: Routes = [
       {path: 'dashboard', component: DashboardComponent},
     ]
   },
-
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
