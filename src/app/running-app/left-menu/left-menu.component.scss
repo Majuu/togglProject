@@ -1,3 +1,24 @@
+@mixin active() {
+  background-color: #494949;
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  white-space: nowrap;
+  color: #FFFFFF;
+  border-radius: 6px;
+}
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-track {
+  background: #323232;
+}
+::-webkit-scrollbar-thumb {
+  background: #E20505;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E20505;
+}
 .sidenav {
   height: 100%;
   width: 180px;
@@ -7,6 +28,7 @@
   left: 0;
   background-color: #323232;
   padding-top: 11px;
+  overflow: auto;
 }
 .navbar-brand {
   font-size:21px;
@@ -21,7 +43,6 @@
 .menu-item {
   font-size: 15px;
   color: #D1D1D1;
-
 }
 .menu-element {
   background-color: #323232;
@@ -31,16 +52,26 @@
   white-space: nowrap;
   color: #B5B5B5;
   border-radius: 6px;
-}
+  li:hover {
+      @include active();
+    }
+  }
 .active {
-  background-color: #494949;
-  width: 100%;
-  height: 35px;
-  line-height: 35px;
-  white-space: nowrap;
-  color: #FFFFFF;
-  border-radius: 6px;
+  @include active();
 }
 .symbol {
   margin: 7%;
+}
+.showMore {
+  color: #7F7F7F;
+  font-size: 15px;
+  margin-left: 10%;
+  margin-top: -5%
+}
+.manage {
+  color: #787878;
+  font-size: 12px;
+  margin-left: 15%;
+  margin-top: 8%;
+  margin-bottom: -6%
 }

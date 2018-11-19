@@ -3,7 +3,7 @@
 
       <div class="container-fluid">
     <div class="navbar-header">
-      <a href="#" class="navbar-brand">
+      <a href="#" class="togglBrand">
         <i class="fa fa-power-off powerOnOff"></i>
         <b>toggl</b></a>
     </div>
@@ -11,11 +11,11 @@
     <div class="btn btn-toolbar">
     <ul class="nav navbar-nav navbar-right">
       <li>
-        <a class="right-menu-dis" role="button"><b>Features</b></a>
-        <a class="right-menu-dis" role="button"><b>Pricing</b></a>
-        <a class="right-menu-dis" role="button"><b>Training</b></a>
-        <a class="right-menu" role="button" routerLink="/login" (click)="changeColGreen()"><b>Log in</b></a>
-        <a class="right-menu" role="button" routerLink="/signup" (click)="changeColPink()"><b>Sign up</b></a>
+        <a class="rightMenuDisallowed" role="button"><b>Features</b></a>
+        <a class="rightMenuDisallowed" role="button"><b>Pricing</b></a>
+        <a class="rightMenuDisallowed" role="button"><b>Training</b></a>
+        <a class="rightMenu" role="button" routerLink="/login" (click)="changeColorGreen()"><b>Log in</b></a>
+        <a class="rightMenu" role="button" routerLink="/signup" (click)="changeColorPink()"><b>Sign up</b></a>
       </li>
     </ul>
   </div>

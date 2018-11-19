@@ -1,14 +1,16 @@
-.right-menu {
+@mixin rightMenu() {
+  margin: 10px;
+  color: #282A2D;
+}
+.rightMenu {
+  @include rightMenu();
   cursor: pointer;
-  margin: 10px;
-  color: #282A2D;
 }
-.right-menu-dis {
+.rightMenuDisallowed {
+  @include rightMenu();
   cursor: not-allowed;
-  margin: 10px;
-  color: #282A2D;
 }
-.navbar-brand {
+.togglBrand {
   font-size:35px;
   color: #282A2D
 }
