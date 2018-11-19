@@ -24,29 +24,29 @@
   height: 720px;
   text-align: center
 }
-.big-text {
+.bigText {
   color: #282A2D;
   font-size: 53px;
   padding-top: -10px
 }
-.small-text {
+.smallText {
   color: #282A2D;
   font-size: 17px;
   margin-top: -10px;
   margin-bottom: 40px
 }
-.form-label {
+.formLabel {
   background-color: #FFFFFF;
   width: 37%;
   height: 720px;
   margin: auto;
   border-radius: 5px
 }
-.data-label {
+.dataLabel {
   @include logsLabel();
   margin: 100px auto auto;
 }
-.data-label2 {
+.dataLabel2 {
   @include logsLabel();
   margin: 55px auto auto;
 }
@@ -56,27 +56,27 @@
   margin: auto;
   height: 70px
 }
-.red-button {
+.redButton {
   cursor: pointer;
   margin: 7% auto auto;
   background-color: #E24F54;
   @include button();
 }
-.white-button {
+.whiteButton {
   cursor: not-allowed;
   margin: 3% auto auto;
   background-color: #FFFFFF;
   border: 3px #F1F4F6 solid;
   @include button();
 }
-.red-button-fill {
+.redButtonFill {
   @include buttonFill();
   color: white;
 }
-.white-button-fill {
+.whiteButtonFill {
   @include buttonFill();
   color: black;
 }
-.checkbox-add {
+.checkboxAdd {
   margin-top: 10%
 }
