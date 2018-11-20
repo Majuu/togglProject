@@ -40,15 +40,17 @@
   width: 37%;
   height: 720px;
   margin: auto;
-  border-radius: 5px
-}
-.dataLabel {
-  @include logsLabel();
-  margin: 100px auto auto;
-}
-.dataLabel2 {
-  @include logsLabel();
-  margin: 55px auto auto;
+  border-radius: 5px;
+
+  .dataLabel {
+    @include logsLabel();
+    margin: 100px auto auto;
+  }
+
+  .dataLabel2 {
+    @include logsLabel();
+    margin: 55px auto auto;
+  }
 }
 .forms {
   background-color: #E3E8EB;
@@ -61,6 +63,11 @@
   margin: 7% auto auto;
   background-color: #E24F54;
   @include button();
+
+  .redButtonFill {
+    @include buttonFill();
+    color: white;
+  }
 }
 .whiteButton {
   cursor: not-allowed;
@@ -68,14 +75,11 @@
   background-color: #FFFFFF;
   border: 3px #F1F4F6 solid;
   @include button();
-}
-.redButtonFill {
-  @include buttonFill();
-  color: white;
-}
-.whiteButtonFill {
-  @include buttonFill();
-  color: black;
+
+  .whiteButtonFill {
+    @include buttonFill();
+    color: black;
+  }
 }
 .checkboxAdd {
   margin-top: 10%

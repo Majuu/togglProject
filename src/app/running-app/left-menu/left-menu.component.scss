@@ -16,10 +16,7 @@
 ::-webkit-scrollbar-thumb {
   background: #E20505;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #E20505;
-}
-.sidenav {
+.sideNav {
   height: 100%;
   width: 180px;
   position: fixed;
@@ -29,49 +26,51 @@
   background-color: #323232;
   padding-top: 11px;
   overflow: auto;
-}
-.navbar-brand {
-  font-size:21px;
-  color: #FFFFFF;
-}
-.powerOnOff {
-  font-size:21px;
-  color: #E20505;
-  margin-left: 15px;
-  margin-right: 5px;
-}
-.menu-item {
-  font-size: 15px;
-  color: #D1D1D1;
-}
-.menu-element {
-  background-color: #323232;
-  width: 100%;
-  height: 35px;
-  line-height: 35px;
-  white-space: nowrap;
-  color: #B5B5B5;
-  border-radius: 6px;
-  li:hover {
+
+  .navbarBrand {
+    font-size:21px;
+    color: #FFFFFF;
+  }
+  .powerOnOff {
+    font-size:21px;
+    color: #E20505;
+    margin-left: 15px;
+    margin-right: 5px;
+  }
+  .menuElement {
+    background-color: #323232;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    white-space: nowrap;
+    color: #B5B5B5;
+    border-radius: 6px;
+    li:hover {
       @include active();
     }
+    .menuItem {
+      font-size: 15px;
+      color: #D1D1D1;
+    }
   }
-.active {
-  @include active();
+  .active {
+    @include active();
+  }
+  .symbol {
+    margin: 7%;
+  }
+  .showMore {
+    color: #7F7F7F;
+    font-size: 15px;
+    margin-left: 10%;
+    margin-top: -5%
+  }
+  .manage {
+    color: #787878;
+    font-size: 12px;
+    margin-left: 15%;
+    margin-top: 8%;
+    margin-bottom: -6%
+  }
 }
-.symbol {
-  margin: 7%;
-}
-.showMore {
-  color: #7F7F7F;
-  font-size: 15px;
-  margin-left: 10%;
-  margin-top: -5%
-}
-.manage {
-  color: #787878;
-  font-size: 12px;
-  margin-left: 15%;
-  margin-top: 8%;
-  margin-bottom: -6%
-}
+
