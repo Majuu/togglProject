@@ -1,0 +1,25 @@
+.label {
+  width: 75%;
+  height: 65px;
+  margin-left: 5px;
+  font-size: 18px;
+  float: left
+}
+.createProjectButton {
+  float: left;
+  width: 8%;
+  height: 65px;
+  margin-left: 5px;
+  font-size: 15px;
+  background: white;
+  line-height: 65px;
+  white-space: nowrap;
+  color: #A3A3A3;
+
+  .createProjectPlus {
+    font-size: 18px;
+    color: #4BC800;
+    margin: 5px;
+  }
+}
+
