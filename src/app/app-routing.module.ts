@@ -17,17 +17,23 @@ const appRoutes: Routes = [
       {path: 'signup', component: SignUpComponent},
     ]
   },
-
-  {    path: 'home', redirectTo: '/home/timer', pathMatch: 'full'},
-
-  {    path: 'home', component: RunningAppComponent, children: [
-      {path: 'timer', component: TimerComponent},
-      {path: 'dashboard', component: DashboardComponent},
+  {
+      path: 'home', component: RunningAppComponent, children: [
+        {
+          path: '', redirectTo: 'timer', pathMatch: 'full'
+        },
+      {
+          path: 'timer', component: TimerComponent
+      },
+      {
+          path: 'dashboard', component: DashboardComponent
+      },
     ]
   },
-  { path: '**', component: PageNotFoundComponent }
+  {
+    path: '**', component: PageNotFoundComponent
+  }
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]
