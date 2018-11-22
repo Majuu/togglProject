@@ -1,25 +1,66 @@
-.label {
-  width: 75%;
-  height: 65px;
-  margin-left: 5px;
-  font-size: 18px;
-  float: left
+@mixin verticalPosition() {
+  line-height: 65px;
+  text-align: center;
+  vertical-align: middle;
 }
-.createProjectButton {
+@mixin buttonTemplate() {
+  @include verticalPosition();
   float: left;
-  width: 8%;
   height: 65px;
-  margin-left: 5px;
   font-size: 15px;
   background: white;
-  line-height: 65px;
   white-space: nowrap;
   color: #A3A3A3;
+}
+.label {
+  width: 1310px;
+  height: 65px;
+  //margin-left: 5px;
+  font-size: 18px;
+  float: left;
+  border: none;
+}
+.createProjectButton {
+  @include buttonTemplate();
+  width: 140px;
 
   .createProjectPlus {
     font-size: 18px;
     color: #4BC800;
     margin: 5px;
+    @include verticalPosition();
   }
 }
+.optionButtons {
+  @include buttonTemplate();
+  width: 50px;
+  color: #CECECE;
+}
+.timer {
+  @include buttonTemplate();
+  width: 80px;
+  font-size: 18px;
+  color: #7B7B7B;
+}
+.player {
+  @include buttonTemplate();
+  width: 65px;
 
+  .playButton {
+    @include verticalPosition();
+    color: #4BC800;
+    font-size: 40px;
+  }
+}
+.modeType {
+  display: flex;
+  flex-direction: column;
+  height: 66px;
+  padding-top: 10px;
+  @include buttonTemplate();
+  width: 40px;
+.manualAuto {
+  color: #CECECE;
+  margin: 4px;
+}
+}
