@@ -33,7 +33,7 @@
 }
 .optionButtons {
   @include buttonTemplate();
-  width: 50px;
+  width: 55px;
   color: #CECECE;
 }
 .timer {
@@ -58,9 +58,11 @@
   height: 66px;
   padding-top: 10px;
   @include buttonTemplate();
-  width: 40px;
-.manualAuto {
+  width: 35px;
+
+  .manualAuto {
   color: #CECECE;
   margin: 4px;
+  font-size: 17px;
   }
 }

@@ -13,6 +13,8 @@ import { DashboardComponent } from './src/dashboard/dashboard.component';
 import { LoggingStartComponent } from './auth/logging-start.component';
 import { RunningAppComponent } from './src/running-app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {ProjectListComponent} from './src/timer/project-list/project-list.component';
+
 
 
 @NgModule({
@@ -27,6 +29,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     LoggingStartComponent,
     RunningAppComponent,
     PageNotFoundComponent,
+    ProjectListComponent
   ],
   imports: [
     BrowserModule,
