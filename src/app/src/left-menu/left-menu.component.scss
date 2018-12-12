@@ -23,6 +23,7 @@
   z-index: 1;
   top: 0;
   left: 0;
+
   background-color: #323232;
   padding-top: 11px;
   overflow: auto;
@@ -30,6 +31,7 @@
   .navbarBrand {
     font-size:21px;
     color: #FFFFFF;
+    padding-left: 15px;
   }
   .positioned {
     margin-top: 6px;
@@ -38,7 +40,7 @@
   .powerOnOff {
     font-size:21px;
     color: #E20505;
-    margin-left: 15px;
+    //margin-left: 15px;
     margin-right: 5px;
   }
   .menuElement {
@@ -49,6 +51,7 @@
     white-space: nowrap;
     color: #B5B5B5;
     border-radius: 6px;
+    //padding-left: 10px;
     li:hover {
       @include active();
     }
@@ -72,7 +75,7 @@
   .manage {
     color: #787878;
     font-size: 12px;
-    margin-left: 15%;
+    padding-left: 35px;
     margin-top: 8%;
     margin-bottom: -6%
   }

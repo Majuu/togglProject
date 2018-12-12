@@ -15,6 +15,7 @@ import { RunningAppComponent } from './src/running-app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {ProjectListComponent} from './src/timer/project-list/project-list.component';
 import {ManualModeComponent} from './src/manual-mode/manual-mode.component';
+import { MainAppRouterComponent } from './src/main-app-router/main-app-router.component';
 
 
 
@@ -32,7 +33,8 @@ import {ManualModeComponent} from './src/manual-mode/manual-mode.component';
     RunningAppComponent,
     PageNotFoundComponent,
     ProjectListComponent,
-    ManualModeComponent
+    ManualModeComponent,
+    MainAppRouterComponent
   ],
   imports: [
     BrowserModule,

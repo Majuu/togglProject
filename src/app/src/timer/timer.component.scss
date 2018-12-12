@@ -15,14 +15,18 @@
 .sizeOf {
   height: 65px;
   background: #FFFFFF;
+  display: flex;
+
 }
 .label {
   width: 1310px;
   height: 65px;
-  //margin-left: 5px;
+  //margin-left: 5px;   //something change?
   font-size: 18px;
   float: left;
   border: none;
+;
+
 }
 .createProjectButton {
   @include buttonTemplate();
