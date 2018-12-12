@@ -12,21 +12,20 @@
   white-space: nowrap;
   color: #A3A3A3;
 }
+@mixin workModeSelect() {
+  margin: 4px;
+  font-size: 17px;
+}
 .sizeOf {
   height: 65px;
   background: #FFFFFF;
-  display: flex;
-
 }
 .label {
   width: 1310px;
   height: 65px;
-  //margin-left: 5px;   //something change?
   font-size: 18px;
   float: left;
   border: none;
-;
-
 }
 .createProjectButton {
   @include buttonTemplate();
@@ -68,9 +67,13 @@
   @include buttonTemplate();
   width: 35px;
 
-  .manualAuto {
-  color: #CECECE;
-  margin: 4px;
-  font-size: 17px;
+  .manualMode {
+    @include workModeSelect();
+  color: #4BC800;
   }
-}
+  .autoMode {
+    @include workModeSelect();
+    color: #CECECE;
+  }
+
+  }
