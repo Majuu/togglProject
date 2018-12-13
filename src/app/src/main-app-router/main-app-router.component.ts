@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-main-app-router',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-app-router.component.scss']
 })
 export class MainAppRouterComponent implements OnInit {
+
+  @Output() menuChanger = false;
 
   constructor() { }
 

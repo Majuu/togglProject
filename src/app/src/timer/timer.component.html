@@ -1,10 +1,11 @@
 <div class="sizeOf">
 
-
+<!--<div style="display: flex">-->
   <input type="text"
          id="email"
          placeholder="What are you working on?"
          class="form-control label">
+<!--</div>-->
 
   <div class="createProjectButton"><i class="fa fa-plus createProjectPlus"></i>Create a project</div>
 
@@ -15,8 +16,8 @@
   <div class="player"><i class="fa fa-play-circle playButton"></i></div>
 
   <div class="modeType">
-    <i class="fa fa-clock-o manualMode"></i>
-    <i class="fa fa-list autoMode" ></i>
+    <a class="fa fa-clock-o manualMode" (click)="menuChange=true"></a>
+    <a class="fa fa-list autoMode" (click)="menuChange=false"></a>
 
   </div>
 

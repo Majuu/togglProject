@@ -1,10 +1,13 @@
-<div>
+<div *ngIf="menuChanger">
   <app-timer></app-timer>
 </div>
 
-<div>
-  <p>
-    main-app-router works!
-  </p>
+<div *ngIf="!menuChanger">
+  <app-manual-mode></app-manual-mode>
 </div>
+
+<div>
+<app-project-list></app-project-list>
+</div>
+
 

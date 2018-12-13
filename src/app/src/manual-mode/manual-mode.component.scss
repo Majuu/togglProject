@@ -1,0 +1,81 @@
+@mixin verticalPosition() {
+  line-height: 65px;
+  text-align: center;
+  vertical-align: middle;
+}
+@mixin buttonTemplate() {
+  @include verticalPosition();
+  float: left;
+  height: 65px;
+  font-size: 15px;
+  background: white;
+  white-space: nowrap;
+  color: #A3A3A3;
+}
+@mixin workModeSelect() {
+  margin: 4px;
+  font-size: 17px;
+}
+.sizeOf {
+  height: 65px;
+  background: #FFFFFF;
+}
+.label {
+  width: 1170px;
+  height: 65px;
+  font-size: 18px;
+  float: left;
+  border: none;
+}
+.createProjectButton {
+  @include buttonTemplate();
+  width: 140px;
+
+  .createProjectPlus {
+    font-size: 18px;
+    color: #4BC800;
+    margin: 5px;
+    @include verticalPosition();
+  }
+}
+.optionButtons {
+  @include buttonTemplate();
+  width: 55px;
+  color: #CECECE;
+}
+.timer {
+  @include buttonTemplate();
+  width: 80px;
+  font-size: 18px;
+  color: #7B7B7B;
+}
+.player {
+  @include buttonTemplate();
+  width: 65px;
+
+  .playButton {
+    @include verticalPosition();
+    color: #4BC800;
+    font-size: 40px;
+  }
+}
+.modeType {
+  display: flex;
+  flex-direction: column;
+  height: 66px;
+  padding-top: 10px;
+  @include buttonTemplate();
+  width: 35px;
+
+  .manualMode {
+    @include workModeSelect();
+    color: #CECECE;
+  }
+  .autoMode {
+    @include workModeSelect();
+    color: #4BC800;
+  }
+}
+.calendar1 {
+  @include verticalPosition();
+}
