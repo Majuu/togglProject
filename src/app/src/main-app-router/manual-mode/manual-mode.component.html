@@ -17,9 +17,9 @@
 
   <div class="player"><i class="fa fa-check-circle playButton"></i></div>
 
-  <div class="modeType">
-    <i class="fa fa-clock-o manualMode" href="" (click)="menuChange=false"></i>
-    <i class="fa fa-list autoMode" href="" (click)="menuChange=true"></i>
+  <div class="modeType" >
+    <i class="fa fa-clock-o manualMode"></i>
+    <i class="fa fa-list autoMode" routerLink="/home/dashboard" (click)=changeComponent()></i>
 
   </div>
 

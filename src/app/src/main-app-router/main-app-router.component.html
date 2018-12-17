@@ -1,13 +1,12 @@
-<div *ngIf="menuChanger">
-  <app-timer></app-timer>
+<div *ngIf=menuChanger>
+  <app-timer (changer)="componentChange($event)"></app-timer>
 </div>
 
-<div *ngIf="!menuChanger">
-  <app-manual-mode></app-manual-mode>
+<div *ngIf=!menuChanger>
+  <app-manual-mode (changer)="componentChange($event)"></app-manual-mode>
 </div>
 
 <div>
 <app-project-list></app-project-list>
 </div>
-
 

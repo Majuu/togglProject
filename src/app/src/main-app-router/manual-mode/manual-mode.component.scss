@@ -21,7 +21,7 @@
   background: #FFFFFF;
 }
 .label {
-  width: 1310px;
+  width: 1175px;
   height: 65px;
   font-size: 18px;
   float: left;
@@ -69,11 +69,15 @@
 
   .manualMode {
     @include workModeSelect();
-  color: #4BC800;
+    color: #CECECE;
+    cursor: pointer;
   }
   .autoMode {
     @include workModeSelect();
-    color: #CECECE;
+    color: #4BC800;
+    cursor: pointer;
   }
-
-  }
+}
+.calendar1 {
+  @include verticalPosition();
+}

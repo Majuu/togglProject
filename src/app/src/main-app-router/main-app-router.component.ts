@@ -1,4 +1,4 @@
-import {Component, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-main-app-router',
@@ -7,11 +7,14 @@ import {Component, OnInit, Output} from '@angular/core';
 })
 export class MainAppRouterComponent implements OnInit {
 
-  @Output() menuChanger = false;
-
+  menuChanger: boolean;
   constructor() { }
 
   ngOnInit() {
-  }
 
+  }
+  componentChange(changeManager) {
+    console.log('Testing.. ' + changeManager);
+    this.menuChanger = changeManager;
+}
 }
