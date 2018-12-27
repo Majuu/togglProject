@@ -13,7 +13,7 @@ export class NavbarStartComponent implements OnInit {
 
   ngOnInit() {
 this.changeColorGreen();
-console.log(this.router.url);
+// console.log(this.router.url);
   }
   changeColorGreen() {
     document.body.style.backgroundColor = '#88CF8F';

@@ -9,7 +9,8 @@ export class TimerComponent implements OnInit {
 
   @Output() changer = new EventEmitter<boolean>();
 
-  changeTheMenu = true;
+  changeTheMenu = false;
+  playOrStop = true;
 
   constructor() { }
 
@@ -20,6 +21,10 @@ export class TimerComponent implements OnInit {
 
     this.changeTheMenu = !this.changeTheMenu;
     this.changer.emit(this.changeTheMenu);
-
   }
+  playChange() {
+  this.playOrStop = !this.playOrStop;
+  }
+
+
 }

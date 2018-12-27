@@ -9,7 +9,7 @@ export class ManualModeComponent implements OnInit {
 
   @Output() changer = new EventEmitter<boolean>();
 
-  changeTheMenu = false;
+  changeTheMenu = true;
 
   constructor() { }
 
@@ -20,7 +20,6 @@ export class ManualModeComponent implements OnInit {
 
     this.changeTheMenu = !this.changeTheMenu;
     this.changer.emit(this.changeTheMenu);
-
  }
 
 }

@@ -1,8 +1,8 @@
-<div *ngIf=menuChanger>
+<div *ngIf=!menuChanger>
   <app-timer (changer)="componentChange($event)"></app-timer>
 </div>
 
-<div *ngIf=!menuChanger>
+<div *ngIf=menuChanger>
   <app-manual-mode (changer)="componentChange($event)"></app-manual-mode>
 </div>
 

@@ -14,7 +14,6 @@ export class MainAppRouterComponent implements OnInit {
 
   }
   componentChange(changeManager) {
-    console.log('Testing.. ' + changeManager);
     this.menuChanger = changeManager;
 }
 }

@@ -58,6 +58,11 @@
     color: #4BC800;
     font-size: 40px;
   }
+  .stopButton {
+    @include verticalPosition();
+    color: #E20505;
+    font-size: 40px;
+  }
 }
 .modeType {
   display: flex;
