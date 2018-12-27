@@ -23,7 +23,8 @@ export class TimerComponent implements OnInit {
     this.changer.emit(this.changeTheMenu);
   }
   playChange() {
-  this.playOrStop = !this.playOrStop;
+
+    this.playOrStop = !this.playOrStop;
   }
 
 

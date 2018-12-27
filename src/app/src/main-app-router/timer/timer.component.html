@@ -13,13 +13,16 @@
   <div class="optionButtons"><i class="fa fa-dollar"></i></div>
 
   <div class="timer">0:00:00</div>
+
   <div *ngIf=playOrStop class="player" (click)=playChange()><i class="fa fa-play-circle playButton"></i></div>
   <div *ngIf=!playOrStop class="player" (click)=playChange()><i class="fa fa-stop-circle stopButton"></i></div>
 
-  <div class="modeType">
+  <div *ngIf=playOrStop class="modeType">
     <a class="fa fa-clock-o manualMode" (click)=changeComponent()></a>
     <a class="fa fa-list autoMode"></a>
-
   </div>
+
+  <div *ngIf=!playOrStop class="optionButtonsTrash" (click)="playChange()">
+    <i class="fa fa-trash"></i></div>
 
 </div>

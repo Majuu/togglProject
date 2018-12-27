@@ -34,13 +34,18 @@
   .createProjectPlus {
     font-size: 18px;
     color: #4BC800;
-    margin: 5px;
+    margin-right: 5px;
     @include verticalPosition();
   }
 }
 .optionButtons {
   @include buttonTemplate();
   width: 55px;
+  color: #CECECE;
+}
+.optionButtonsTrash {
+  @include buttonTemplate();
+  width: 35px;
   color: #CECECE;
 }
 .timer {
@@ -57,11 +62,13 @@
     @include verticalPosition();
     color: #4BC800;
     font-size: 40px;
+    cursor: pointer;
   }
   .stopButton {
     @include verticalPosition();
     color: #E20505;
     font-size: 40px;
+    cursor: pointer;
   }
 }
 .modeType {
