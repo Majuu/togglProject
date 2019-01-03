@@ -11,6 +11,7 @@
   background: white;
   white-space: nowrap;
   color: #A3A3A3;
+  cursor: pointer;
 }
 @mixin workModeSelect() {
   margin: 4px;
@@ -62,13 +63,11 @@
     @include verticalPosition();
     color: #4BC800;
     font-size: 40px;
-    cursor: pointer;
   }
   .stopButton {
     @include verticalPosition();
     color: #E20505;
     font-size: 40px;
-    cursor: pointer;
   }
 }
 .modeType {
@@ -82,12 +81,10 @@
   .manualMode {
     @include workModeSelect();
     color: #4BC800;
-    cursor: pointer;
   }
   .autoMode {
     @include workModeSelect();
     color: #CECECE;
-    cursor: pointer;
   }
 
   }
