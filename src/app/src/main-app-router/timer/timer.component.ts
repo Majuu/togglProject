@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {timer} from 'rxjs';
 
+
 @Component({
   selector: 'app-timer',
   templateUrl: './timer.component.html',
@@ -16,12 +17,13 @@ export class TimerComponent implements OnInit {
   secondsDisplay;
   minutesDisplay;
   hoursDisplay;
+  subscription;
   time = timer(0, 1000);
 
   constructor() { }
 
   ngOnInit() {
-// this.startTimer();
+
     this.secondsDisplay = this.getSeconds(this.ticks);
     this.minutesDisplay = this.getMinutes(this.ticks);
     this.hoursDisplay = this.getHours(this.ticks);
@@ -30,15 +32,11 @@ export class TimerComponent implements OnInit {
 
   public startTimer() {
 
-
-  // const time = timer(0, 1000);
-  this.time.subscribe(t =>  {this.ticks = t;
+this.subscription = this.time.subscribe(t =>  {this.ticks = t;
 
   this.secondsDisplay = this.getSeconds(this.ticks);
   this.minutesDisplay = this.getMinutes(this.ticks);
   this.hoursDisplay = this.getHours(this.ticks);
-
-
 });
 }
   private getSeconds(ticks: number) {
@@ -74,22 +72,6 @@ changeComponent() {
     }
   }
 pauseTimer() {
-  console.log('testtt');
-  this.time.subscribe().unsubscribe();
+    this.subscription.unsubscribe();
 }
-  // startTimer() {
-  //   this.interval = setInterval(() => {
-  //       this.timeLeft++;
-  //   }, 1000);
-  // }
-  // pauseTimer() {
-  //   clearInterval(this.interval);
-  // }
-  // timeReset() {
-  //   this.timeLeft = 0;
-  // }
-  // time.subscribe(t => console.log(new Date().getMinutes() + ':'  )); --> this line was in OnInit()
-  // observableTimer() {
-  // }
-  // const interval = Rx.Observable.interval(1000);
 }
