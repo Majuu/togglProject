@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {timer} from 'rxjs';
+import {ProjectListService} from '../../../projectList.service';
 
 
 @Component({
@@ -19,14 +20,16 @@ export class TimerComponent implements OnInit {
   hoursDisplay;
   subscription;
   time = timer(0, 1000);
+  totalTime;
 
-  constructor() { }
+  constructor(private projectListService: ProjectListService) { }
 
   ngOnInit() {
 
     this.secondsDisplay = this.getSeconds(this.ticks);
     this.minutesDisplay = this.getMinutes(this.ticks);
     this.hoursDisplay = this.getHours(this.ticks);
+    this.totalTime = this.hoursDisplay + ':' + this.minutesDisplay + ':' + this.secondsDisplay;
 
   }
 
@@ -37,6 +40,8 @@ this.subscription = this.time.subscribe(t =>  {this.ticks = t;
   this.secondsDisplay = this.getSeconds(this.ticks);
   this.minutesDisplay = this.getMinutes(this.ticks);
   this.hoursDisplay = this.getHours(this.ticks);
+
+  this.totalTime = this.hoursDisplay + ':' + this.minutesDisplay + ':' + this.secondsDisplay;
 });
 }
   private getSeconds(ticks: number) {
@@ -74,4 +79,8 @@ changeComponent() {
 pauseTimer() {
     this.subscription.unsubscribe();
 }
+onCreateProject(projectName: string, projectTime: string) {
+this.projectListService.addProject(projectName, projectTime);
+}
+
 }

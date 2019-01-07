@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {ProjectListService} from '../../projectList.service';
+
 
 @Component({
   selector: 'app-project-list',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-list.component.scss']
 })
 export class ProjectListComponent implements OnInit {
+  @Input() project: {name: string, time: string};
 
   constructor() { }
 
@@ -14,3 +17,4 @@ export class ProjectListComponent implements OnInit {
   }
 
 }
+// private projectListService: ProjectListService

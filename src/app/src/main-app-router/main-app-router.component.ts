@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ProjectListService} from '../../projectList.service';
 
 @Component({
   selector: 'app-main-app-router',
@@ -7,11 +8,12 @@ import {Component, OnInit} from '@angular/core';
 })
 export class MainAppRouterComponent implements OnInit {
 
+  projects: {name: string, time: string}[] = [];
   menuChanger: boolean;
-  constructor() { }
+  constructor(private projectListService: ProjectListService) { }
 
   ngOnInit() {
-
+ this.projects = this.projectListService.projects;
   }
   componentChange(changeManager) {
     this.menuChanger = changeManager;

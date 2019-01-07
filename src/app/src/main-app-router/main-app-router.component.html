@@ -7,6 +7,9 @@
 </div>
 
 <div>
-<app-project-list></app-project-list>
+<app-project-list
+*ngFor="let proj of projects"
+[project]="proj"
+></app-project-list>
 </div>
 

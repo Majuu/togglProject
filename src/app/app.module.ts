@@ -16,6 +16,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import {ProjectListComponent} from './src/project-list/project-list.component';
 import {ManualModeComponent} from './src/main-app-router/manual-mode/manual-mode.component';
 import { MainAppRouterComponent } from './src/main-app-router/main-app-router.component';
+import { SingleProjectComponent } from './src/single-project/single-project.component';
+import {ProjectListService} from './projectList.service';
 
 
 
@@ -34,14 +36,15 @@ import { MainAppRouterComponent } from './src/main-app-router/main-app-router.co
     PageNotFoundComponent,
     ProjectListComponent,
     ManualModeComponent,
-    MainAppRouterComponent
+    MainAppRouterComponent,
+    SingleProjectComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ProjectListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
