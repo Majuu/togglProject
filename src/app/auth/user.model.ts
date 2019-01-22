@@ -4,5 +4,4 @@ export class User implements userInterface {
   password: string;
 
 }
-
 export default User;

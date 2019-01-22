@@ -1,27 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { UserAuthService } from '../userAuth.service';
-import { User } from '../user.model';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {UserAuthService} from '../userAuth.service';
+import {User} from '../user.model';
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
-  providers: [ UserAuthService ],
+  providers: [UserAuthService],
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
 
   emailAddress: string;
   passwordSet: string;
-  ctrl: any;
-  users: User[];
-
-
 
   constructor(private router: Router,
-              private authService: UserAuthService) { }
+              private authService: UserAuthService) {
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   setValue(email: string, password: string) {
 
@@ -30,14 +28,9 @@ export class SignUpComponent implements OnInit {
 
     const newUser: User = {email, password} as User;
     this.authService.addUser(newUser)
-    .subscribe();
-    // user => this.users.push(user)
-console.log(newUser);
+      .subscribe();
 
   }
 
-  databasePush() {
-
-  }
 
 }

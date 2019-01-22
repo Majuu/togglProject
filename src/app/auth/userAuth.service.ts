@@ -10,6 +10,8 @@ import {HandleError, HttpErrorHandler} from './http-error-handler.service';
 export class UserAuthService {
 
   usersUrl = 'http://localhost:5000/auth/register';
+  loggingUrl = 'http://localhost:5000/auth/login';
+
   private handleError: HandleError;
 
   constructor(private http: HttpClient,
@@ -21,7 +23,7 @@ export class UserAuthService {
     })
   };
 
-  /** POST: add a new hero to the database */
+  // REGISTRATION
   addUser (user: User): Observable<User> {
   // console.log(this.usersUrl);
     return this.http.post<User>(this.usersUrl, user, this.httpOptions)
@@ -30,4 +32,12 @@ export class UserAuthService {
       );
   }
 
+  // LOGIN
+  logUser (user: User): Observable<User> {
+    // console.log(this.usersUrl);
+    return this.http.post<User>(this.loggingUrl, user, this.httpOptions)
+      .pipe(
+        catchError(this.handleError('addUser', user))
+      );
+  }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {UserAuthService} from '../userAuth.service';
+import {User} from '../user.model';
 
 @Component({
   selector: 'app-start-screen',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartScreenComponent implements OnInit {
 
-  constructor() { }
+  emailAddress: string;
+  passwordSet: string;
+
+  constructor(private authService: UserAuthService) { }
 
   ngOnInit() {
+  }
+
+  logMeIn(email: string, password: string) {
+
+    email = email.trim();
+    password = password.trim();
+
+    const newUser: User = {email, password} as User;
+    this.authService.logUser(newUser)
+      .subscribe();
   }
 
 }

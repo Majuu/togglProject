@@ -9,12 +9,12 @@
 
       <div>
         <label class="dataLabel"><b>EMAIL ADDRESS</b></label>
-        <input type="text"
+        <input [(ngModel)]="emailAddress" #ctrl="ngModel" type="text"
                id="email"
                class="form-control textForm">
 
         <label class="dataLabel passwordLabel"><b>PASSWORD</b></label>
-        <input type="password"
+        <input [(ngModel)]="passwordSet" #ctrl="ngModel" type="password"
                id="password"
                class="form-control textForm">
       </div>
@@ -28,7 +28,7 @@
         <p class="orStyle"><b>OR</b></p>
       </div>
 
-      <div class="whiteButton" role="button">
+      <div class="whiteButton" role="button" (click)="logMeIn(emailAddress, passwordSet)">
         <p class="whiteButtonFill"><b><i class="fa fa-google"></i> LOG IN WITH GOOGLE <i class="fa fa-caret-right"></i></b>
         </p>
       </div>
