@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ProjectListService {
@@ -20,7 +20,5 @@ export class ProjectListService {
 
   addProject(projectName: string, projectTime: string) {
     this.projects.push({name: projectName, time: projectTime});
-    // console.log('new project, name: ' + projectName, 'time: ' + projectTime);
-    // console.log(typeof projectName,  typeof projectTime);
-  }
+   }
 }

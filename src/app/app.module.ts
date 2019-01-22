@@ -18,6 +18,10 @@ import {ManualModeComponent} from './src/main-app-router/manual-mode/manual-mode
 import { MainAppRouterComponent } from './src/main-app-router/main-app-router.component';
 import { SingleProjectComponent } from './src/single-project/single-project.component';
 import {ProjectListService} from './projectList.service';
+import { HttpClientModule } from '@angular/common/http';
+import {UserAuthService} from './auth/userAuth.service';
+import {HttpErrorHandler} from './auth/http-error-handler.service';
+import {MessageService} from './auth/message.service';
 
 
 
@@ -41,10 +45,11 @@ import {ProjectListService} from './projectList.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [ProjectListService],
+  providers: [ProjectListService, UserAuthService, HttpErrorHandler, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

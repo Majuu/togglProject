@@ -1,6 +1,16 @@
-.menuDiv {
-  width: 180px; display: inline-block;
+//.menuDiv {
+//  width: 180px; display: inline-block;
+//}
+//.appDiv {
+//  display: inline-block;
+//}
+.parent {
+  display: flex;
 }
-.appDiv {
-  display: inline-block;
+.narrow {
+  width: 180px;
+}
+.wide {
+  flex: 1;
+  margin-left: 180px;
 }

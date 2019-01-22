@@ -8,18 +8,28 @@
     <div class="formLabel">
 
       <div align="center">
-        <label class="dataLabel"><b>EMAIL ADDRESS</b></label>
-        <input type="text"
+        <label  class="dataLabel"><b>EMAIL ADDRESS</b></label>
+        <input [(ngModel)]="emailAddress" #ctrl="ngModel" type="text"
                id="email"
-               class="form-control forms" #emailInput>
+               class="form-control forms" required>
       </div>
+
+
+      <!--<p>{{emailAddress}}</p>-->
+      <!--<p>{{ctrl.valid}}</p>-->
+
 
       <div align="center">
         <label class="dataLabel2"><b> SET A PASSWORD</b></label>
-        <input type="password"
+        <input  [(ngModel)]="passwordSet" #ctrl="ngModel" type="password"
                id="password"
-               class="form-control forms" #passwordInput>
+               class="form-control forms" required>
       </div>
+
+      <!--<p>{{passwordSet}}</p>-->
+      <!--<p>{{ctrl.valid}}</p>-->
+
+
 
       <div class="checkbox checkboxAdd">
         <label><input type="checkbox" value=""><b>I agree the terms of service and privacy policy</b></label>
@@ -28,10 +38,12 @@
       <div class="redButton" role="button" routerLink="/home">
         <p class="redButtonFill"><b>LOG IN <i class="fa fa-caret-right"></i></b></p>
       </div>
+
       <div class="whiteButton" role="button">
-        <p class="whiteButtonFill"><b><i class="fa fa-google"></i> LOG IN WITH GOOGLE <i
+        <p class="whiteButtonFill" (click)="setValue(emailAddress, passwordSet); databasePush()"><b><i class="fa fa-google"></i> LOG IN WITH GOOGLE <i
           class="fa fa-caret-right"></i></b></p>
       </div>
+
     </div>
   </div>
 </div>

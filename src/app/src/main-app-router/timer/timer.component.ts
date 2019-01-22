@@ -78,6 +78,7 @@ changeComponent() {
   }
 pauseTimer() {
     this.subscription.unsubscribe();
+
 }
 onCreateProject(projectName: string, projectTime: string) {
 this.projectListService.addProject(projectName, projectTime);
