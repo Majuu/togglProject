@@ -27,6 +27,7 @@ export class UserAuthService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
+      'withCredentials': 'true'
     }),
     observe: 'response' as 'body'
   };

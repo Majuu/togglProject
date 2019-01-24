@@ -14,7 +14,7 @@ export class StartScreenComponent implements OnInit {
   passwordSet: string;
   headers: string[];
   config: Config;
-  isLogged: boolean;
+  allCookies: any
 
   constructor(private authService: UserAuthService,
               private http: HttpClient) {
@@ -57,12 +57,21 @@ export class StartScreenComponent implements OnInit {
         console.log(this.headers);
       });
 
-    // if (typeof this.headers === 'object'){
-    //   return this.isLogged = true;
-    // } else {
-    //   return this.isLogged = false;
-    // }
-    // console.log()
+
+    // HEADERS WITHOUT COOKIES
+  // .subscribe(resp => {
+  //
+  //     // display its headers
+  //     const keys = resp.headers.keys();
+  //     this.headers = keys.map(key =>
+  //       `${key}: ${resp.headers.get(key)}`);
+  //
+  //     // access the body directly, which is typed as `Config`.
+  //     this.config = { ... resp.body };
+  //     console.log(this.headers);
+  //     console.log();
+  //   }
+
   }
 
 
