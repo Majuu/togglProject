@@ -9,80 +9,88 @@
 
   <!--TOP NAVBAR-->
 
+  <ul class="navbar nav">
+
+    <div class="menuElement">
+      <li routerLinkActive="active">
+        <a class="menuItem" role="button" routerLink="/home/timer" routerLinkActive="active2"><i
+          class="fa fa-clock-o symbol"></i>Timer</a>
+      </li>
+    </div>
+
+    <div class="menuElement">
+      <li routerLinkActive="active">
+        <a class="menuItem" role="button" routerLink="/home/dashboard" routerLinkActive="active2"><i
+          class="fa fa-bar-chart-o symbol"></i>Dashboard</a></li>
+    </div>
+
+    <div class="menuElement">
+      <li routerLinkActive="active">
+        <a class="menuItem" role="button" routerLink="/home/reports" routerLinkActive="active2"><i
+          class="fa fa-file symbol"></i>Reports</a></li>
+    </div>
+
+    <div class="menuElement">
+      <li routerLinkActive="active">
+        <a class="menuItem" role="button" routerLink="/home/insights" routerLinkActive="active2"><i
+          class="fa fa-line-chart symbol"></i>Insights</a></li>
+    </div>
+
+    <div class="menuElement">
+      <li routerLinkActive="active">
+        <a class="menuItem" role="button" routerLink="/home/saved" routerLinkActive="active2"><i
+          class="fa fa-star symbol"></i>Saved Reports</a></li>
+    </div>
+
+  </ul>
+
+
+  <!--BOTTOM NAVBAR-->
+  <div>
+    <p class="manage"><b>MANAGE</b></p>
     <ul class="navbar nav">
 
       <div class="menuElement">
         <li routerLinkActive="active">
-          <a class="menuItem" role="button" routerLink="/home/timer" routerLinkActive="active2"><i class="fa fa-clock-o symbol"></i>Timer</a>
+          <a class="menuItem" role="button" (click)="showMessage()"><i class="fa fa-folder symbol"></i>Projects</a></li>
+      </div>
+
+      <div class="menuElement">
+        <li routerLinkActive="active">
+          <a class="menuItem" role="button" (click)="showMessage()"><i class="fa fa-address-card symbol"></i>Clients</a>
         </li>
       </div>
 
       <div class="menuElement">
         <li routerLinkActive="active">
-          <a class="menuItem" role="button" routerLink="/home/dashboard" routerLinkActive="active2"><i class="fa fa-bar-chart-o symbol"></i>Dashboard</a></li>
+          <a class="menuItem" role="button" (click)="showMessage()"><i class="fa fa-users symbol"></i>Team</a></li>
       </div>
 
       <div class="menuElement">
         <li routerLinkActive="active">
-          <a class="menuItem" role="button" routerLink="/home/reports" routerLinkActive="active2"><i class="fa fa-file symbol"></i>Reports</a></li>
+          <a class="menuItem" role="button" (click)="showMessage()"><i class="fa fa-briefcase symbol"></i>Workspaces</a>
+        </li>
       </div>
 
       <div class="menuElement">
         <li routerLinkActive="active">
-          <a class="menuItem" role="button" routerLink="/home/insights" routerLinkActive="active2"><i class="fa fa-line-chart symbol"></i>Insights</a></li>
+          <a class="menuItem" role="button" (click)="showMessage()"><i class="fa fa-tag symbol"></i>Tags</a></li>
       </div>
 
       <div class="menuElement">
         <li routerLinkActive="active">
-          <a class="menuItem" role="button" routerLink="/home/saved" routerLinkActive="active2"><i class="fa fa-star symbol"></i>Saved Reports</a></li>
+          <a class="menuItem" role="button" (click)="showMessage()"><i class="fa fa-question-circle symbol"></i>Help</a>
+        </li>
       </div>
+    </ul>
+    <p class="showMore" style=""><i class="fa fa-caret-down symbol"></i>Show more</p>
 
-       </ul>
-
-
-
-<!--BOTTOM NAVBAR-->
-<div>
-  <p class="manage"><b>MANAGE</b></p>
-  <ul class="navbar nav">
-
-    <div class="menuElement">
-      <li routerLinkActive="active">
-        <a class="menuItem" role="button" (click)="showMessage()"><i class="fa fa-folder symbol"></i>Projects</a></li>
-    </div>
-
-    <div class="menuElement">
-      <li routerLinkActive="active">
-        <a class="menuItem" role="button" (click)="showMessage()"><i class="fa fa-address-card symbol"></i>Clients</a></li>
-    </div>
-
-    <div class="menuElement">
-      <li routerLinkActive="active">
-        <a class="menuItem" role="button" (click)="showMessage()"><i class="fa fa-users symbol"></i>Team</a></li>
-    </div>
-
-    <div class="menuElement">
-      <li routerLinkActive="active">
-        <a class="menuItem" role="button" (click)="showMessage()"><i class="fa fa-briefcase symbol"></i>Workspaces</a></li>
-    </div>
-
-    <div class="menuElement">
-      <li routerLinkActive="active">
-        <a class="menuItem" role="button" (click)="showMessage()"><i class="fa fa-tag symbol"></i>Tags</a></li>
-    </div>
-
-    <div class="menuElement">
-      <li routerLinkActive="active">
-        <a class="menuItem" role="button" (click)="showMessage()"><i class="fa fa-question-circle symbol"></i>Help</a></li>
-    </div>
-  </ul>
-  <p class="showMore" style=""><i class="fa fa-caret-down symbol"></i>Show more</p>
-
-</div>
+  </div>
 
   <div class="menuElement">
     <li routerLinkActive="active">
-      <a class="menuItemLogOut" role="button" (click)="showMessage()"><i class="fa fa-hourglass-end symbol"></i>Logout</a></li>
+      <a class="menuItemLogOut" role="button" (click)="showMessage()"><i
+        class="fa fa-hourglass-end symbol"></i>Logout</a></li>
   </div>
 </div>
 

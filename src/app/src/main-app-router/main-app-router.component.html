@@ -1,7 +1,4 @@
-<div style="margin-left:auto;
-    margin-right:auto;
-    height:auto;
-    width:auto;">
+<div>
   <div>
     <div *ngIf=!menuChanger>
       <app-timer (changer)="componentChange($event)"></app-timer>
@@ -12,7 +9,7 @@
     </div>
   </div>
 
-  <div style="margin-top: 30px">
+  <div>
     <app-project-list
       *ngFor="let proj of projects"
       [project]="proj"

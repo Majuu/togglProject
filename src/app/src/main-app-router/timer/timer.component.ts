@@ -22,10 +22,11 @@ export class TimerComponent implements OnInit {
   time = timer(0, 1000);
   totalTime;
 
-  constructor(private projectListService: ProjectListService) { }
+  constructor(private projectListService: ProjectListService) {
+  }
 
   ngOnInit() {
-
+    document.body.style.backgroundColor = 'white';
     this.secondsDisplay = this.getSeconds(this.ticks);
     this.minutesDisplay = this.getMinutes(this.ticks);
     this.hoursDisplay = this.getHours(this.ticks);
@@ -35,15 +36,17 @@ export class TimerComponent implements OnInit {
 
   public startTimer() {
 
-this.subscription = this.time.subscribe(t =>  {this.ticks = t;
+    this.subscription = this.time.subscribe(t => {
+      this.ticks = t;
 
-  this.secondsDisplay = this.getSeconds(this.ticks);
-  this.minutesDisplay = this.getMinutes(this.ticks);
-  this.hoursDisplay = this.getHours(this.ticks);
+      this.secondsDisplay = this.getSeconds(this.ticks);
+      this.minutesDisplay = this.getMinutes(this.ticks);
+      this.hoursDisplay = this.getHours(this.ticks);
 
-  this.totalTime = this.hoursDisplay + ':' + this.minutesDisplay + ':' + this.secondsDisplay;
-});
-}
+      this.totalTime = this.hoursDisplay + ':' + this.minutesDisplay + ':' + this.secondsDisplay;
+    });
+  }
+
   private getSeconds(ticks: number) {
     return this.pad(ticks % 60);
   }
@@ -53,14 +56,18 @@ this.subscription = this.time.subscribe(t =>  {this.ticks = t;
   }
 
   private getHours(ticks: number) {
-    return this.pad(Math.floor((ticks / 60) / 60));
+    return this.padHours(Math.floor((ticks / 60) / 60));
   }
 
   private pad(digit: any) {
     return digit <= 9 ? '0' + digit : digit;
   }
 
-changeComponent() {
+  private padHours(digit: any) {
+    return digit <= 9 ? digit : digit;
+  }
+
+  changeComponent() {
 
     this.changeTheMenu = !this.changeTheMenu;
     this.changer.emit(this.changeTheMenu);
@@ -76,12 +83,18 @@ changeComponent() {
       this.pauseTimer();
     }
   }
-pauseTimer() {
-    this.subscription.unsubscribe();
 
-}
-onCreateProject(projectName: string, projectTime: string) {
-this.projectListService.addProject(projectName, projectTime);
-}
+  pauseTimer() {
+    this.subscription.unsubscribe();
+  }
+
+  onCreateProject(projectName: string, projectTime: string) {
+    this.projectListService.addProject(projectName, projectTime);
+
+    this.secondsDisplay = '00';
+    this.minutesDisplay = '00';
+    this.hoursDisplay = '0';
+    this.totalTime = this.hoursDisplay + ':' + this.minutesDisplay + ':' + this.secondsDisplay;
+  }
 
 }
