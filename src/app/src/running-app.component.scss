@@ -1,16 +1,11 @@
-//.menuDiv {
-//  width: 180px; display: inline-block;
-//}
-//.appDiv {
-//  display: inline-block;
-//}
-.parent {
-  display: flex;
-}
 .narrow {
   width: 180px;
 }
 .wide {
   flex: 1;
   margin-left: 180px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
 }
+
