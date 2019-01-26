@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Config, UserAuthService} from '../userAuth.service';
 import {User} from '../user.model';
 import {HttpClient} from '@angular/common/http';
+import * as cookies from 'browser-cookies';
 
 @Component({
   selector: 'app-start-screen',
@@ -14,7 +15,8 @@ export class StartScreenComponent implements OnInit {
   passwordSet: string;
   headers: string[];
   config: Config;
-  allCookies: any
+  allCookies: string;
+
 
   constructor(private authService: UserAuthService,
               private http: HttpClient) {
@@ -23,20 +25,14 @@ export class StartScreenComponent implements OnInit {
   ngOnInit() {
   }
 
-  showFullResponse() {
-    this.authService.getFullResponse()
-    // resp is of type `HttpResponse<Config>`
-      .subscribe(resp => {
-
-        // display its headers
-        const keys = resp.headers.keys();
-        this.headers = keys.map(key =>
-          `${key}: ${resp.headers.get(key)}`);
-
-        // access the body directly, which is typed as `Config`.
-        this.config = { ... resp.body };
-      });
+  getCookie(c_name) {
+    return localStorage.getItem(c_name);
   }
+
+  setCookie(c_name, value, expiredays) {
+    return localStorage.setItem(c_name, value);
+  }
+
 
   logMeIn(email: string, password: string) {
 
@@ -55,23 +51,21 @@ export class StartScreenComponent implements OnInit {
         // access the body directly, which is typed as `Config`.
         this.config = { ... resp.body };
         console.log(this.headers);
+
+        // this.getCookie('Set-Cookie');
+
+
+
+
+
+
+
+
+        // this.allCookies = document.cookie;
+        // console.log(this.allCookies);
+        // console.log(typeof this.allCookies);
+        // console.log(this.allCookies.length);
       });
-
-
-    // HEADERS WITHOUT COOKIES
-  // .subscribe(resp => {
-  //
-  //     // display its headers
-  //     const keys = resp.headers.keys();
-  //     this.headers = keys.map(key =>
-  //       `${key}: ${resp.headers.get(key)}`);
-  //
-  //     // access the body directly, which is typed as `Config`.
-  //     this.config = { ... resp.body };
-  //     console.log(this.headers);
-  //     console.log();
-  //   }
-
   }
 
 

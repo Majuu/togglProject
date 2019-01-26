@@ -12,4 +12,7 @@ export class LeftMenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  showMessage() {
+    alert('Manage bottom menu clicked... Yet nothing happens');
+  }
 }

@@ -4,18 +4,33 @@
   height: 35px;
   line-height: 35px;
   white-space: nowrap;
-  color: #FFFFFF;
   border-radius: 6px;
 }
+
+@mixin onMousePoint() {
+  color: #FFFFFF;
+}
+
+@mixin active2() {
+  color: #FFFFFF;
+}
+
+@mixin activeItemColor() {
+  color: #FFFFFF;
+}
+
 ::-webkit-scrollbar {
   width: 2px;
 }
+
 ::-webkit-scrollbar-track {
   background: #323232;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #E20505;
 }
+
 .sideNav {
   height: 100%;
   width: 180px;
@@ -29,49 +44,61 @@
   overflow: auto;
 
   .navbarBrand {
-    font-size:21px;
+    font-size: 21px;
     color: #FFFFFF;
     padding-left: 15px;
   }
+
   .positioned {
     margin-top: 6px;
     margin-bottom: 9px;
   }
+
   .powerOnOff {
-    font-size:21px;
+    font-size: 21px;
     color: #E20505;
-    //margin-left: 15px;
     margin-right: 5px;
   }
+
   .menuElement {
+    cursor: pointer;
     background-color: #323232;
     width: 100%;
     height: 35px;
     line-height: 35px;
     white-space: nowrap;
-    color: #B5B5B5;
     border-radius: 6px;
-    //padding-left: 10px;
-    li:hover {
-      @include active();
-    }
-    .menuItem {
-      font-size: 15px;
-      color: #D1D1D1;
+
+    a:hover {
+      @include onMousePoint();
     }
   }
+
+  .menuItem {
+    text-decoration: none;
+    font-size: 15px;
+    color: #B5B5B5;
+  }
+
   .active {
     @include active();
   }
+
+  .active2 {
+    @include onMousePoint();
+  }
+
   .symbol {
     margin: 7%;
   }
+
   .showMore {
     color: #7F7F7F;
     font-size: 15px;
     margin-left: 10%;
     margin-top: -5%
   }
+
   .manage {
     color: #787878;
     font-size: 12px;
@@ -79,5 +106,12 @@
     margin-top: 8%;
     margin-bottom: -6%
   }
-}
 
+  .menuItemLogOut {
+    text-decoration: none;
+    font-size: 15px;
+    color: #B5B5B5;
+    position: absolute;
+    bottom: 30px;
+  }
+}

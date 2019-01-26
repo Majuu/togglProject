@@ -2,22 +2,21 @@
     margin-right:auto;
     height:auto;
     width:auto;">
-<div>
-<div *ngIf=!menuChanger>
-  <app-timer (changer)="componentChange($event)"></app-timer>
-</div>
+  <div>
+    <div *ngIf=!menuChanger>
+      <app-timer (changer)="componentChange($event)"></app-timer>
+    </div>
 
-<div *ngIf=menuChanger>
-  <app-manual-mode (changer)="componentChange($event)"></app-manual-mode>
-</div>
+    <div *ngIf=menuChanger>
+      <app-manual-mode (changer)="componentChange($event)"></app-manual-mode>
+    </div>
+  </div>
 
-</div>
-
-<div style="margin-top: 30px">
-<app-project-list
-*ngFor="let proj of projects"
-[project]="proj"
-></app-project-list>
-</div>
+  <div style="margin-top: 30px">
+    <app-project-list
+      *ngFor="let proj of projects"
+      [project]="proj"
+    ></app-project-list>
+  </div>
 
 </div>

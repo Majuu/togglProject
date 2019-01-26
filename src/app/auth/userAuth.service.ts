@@ -22,14 +22,12 @@ export class UserAuthService {
   ) {
   }
 
-// httpErrorHandler: HttpErrorHandler
-// this.handleError = httpErrorHandler.createHandleError('UsersService');
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'withCredentials': 'true'
     }),
-    observe: 'response' as 'body'
+    observe: 'response' as 'body',
+    withCredentials: true
   };
 
   // REGISTRATION
@@ -42,10 +40,5 @@ export class UserAuthService {
   logUser(user: User): Observable<any> {
     // console.log(this.usersUrl);
     return this.http.post(this.loggingUrl, user, this.httpOptions);
-  }
-
-  getFullResponse(): Observable<HttpResponse<Config>> {
-    return this.http.get<Config>(
-      this.loggingUrl, {observe: 'response'});
   }
 }
