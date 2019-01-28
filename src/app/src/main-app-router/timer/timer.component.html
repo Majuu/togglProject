@@ -1,27 +1,27 @@
 <div class="fullDiv">
-  <div class="test" >
+  <div class="inputCustom">
     <input type="text"
            id="email"
            placeholder="What are you working on?"
            class="custom-form-control"
            #projectName>
   </div>
-    <div class="createProjectButton" ><i class="fa fa-plus createProjectPlus"></i>Create a project
-    </div>
+  <div class="createProjectButton"><i class="fa fa-plus createProjectPlus"></i>Create a project
+  </div>
 
-    <div class="optionButtons"><i class="fa fa-tag "></i></div>
-    <div class="optionButtons"><i class="fa fa-dollar"></i></div>
+  <div class="optionButtons"><i class="fa fa-tag "></i></div>
+  <div class="optionButtons"><i class="fa fa-dollar"></i></div>
 
-    <div class="timer" #projectTime>{{totalTime}}</div>
+  <div class="timer">{{totalTime}}</div>
 
-    <div *ngIf=playOrStop class="player" (click)=playChange()><i class="fa fa-play-circle playButton"></i></div>
-    <div *ngIf=!playOrStop class="player" (click)="playChange(); onCreateProject(projectName.value, totalTime)"><i
-      class="fa fa-stop-circle stopButton"></i></div>
+  <div *ngIf=playOrStop class="player" (click)=playChange()><i class="fa fa-play-circle playButton"></i></div>
+  <div *ngIf=!playOrStop class="player" (click)="playChange(); onCreateProject(projectName.value, totalTime)"><i
+    class="fa fa-stop-circle stopButton"></i></div>
 
-    <div *ngIf=playOrStop class="modeType">
-      <a class="fa fa-clock-o manualMode"></a>
-      <a class="fa fa-list autoMode" (click)=changeComponent()></a>
-    </div>
+  <div *ngIf=playOrStop class="modeType">
+    <a class="fa fa-clock-o manualMode"></a>
+    <a class="fa fa-list autoMode" (click)=changeComponent()></a>
+  </div>
 
-    <div *ngIf=!playOrStop class="optionButtonsTrash" (click)=playChange()><i class="fa fa-trash"></i></div>
+  <div *ngIf=!playOrStop class="optionButtonsTrash" (click)=playChange()><i class="fa fa-trash"></i></div>
 </div>

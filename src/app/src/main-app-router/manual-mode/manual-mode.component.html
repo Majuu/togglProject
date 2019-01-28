@@ -1,10 +1,11 @@
-<div class="sizeOf">
+<div class="fullDiv">
 
-
-  <input type="text"
-         id="email"
-         placeholder="What have you done?"
-         class="form-control label">
+  <div class="inputCustom">
+    <input type="text"
+           id="email"
+           placeholder="What have you done?"
+           class="custom-form-control">
+  </div>
 
   <div class="createProjectButton"><i class="fa fa-plus createProjectPlus"></i>Create a project</div>
 
@@ -17,10 +18,9 @@
 
   <div class="player"><i class="fa fa-check-circle playButton"></i></div>
 
-  <div class="modeType" >
-    <i class="fa fa-clock-o manualMode"></i>
-    <i class="fa fa-list autoMode" routerLink="/home/timer" (click)=changeComponent()></i>
+  <div class="modeType">
+    <i class="fa fa-clock-o autoMode" (click)=changeComponent()></i>
+    <i class="fa fa-list manualMode" routerLink="/home/timer"></i>
 
   </div>
-
 </div>
