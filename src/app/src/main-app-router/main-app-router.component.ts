@@ -14,6 +14,7 @@ export class MainAppRouterComponent implements OnInit {
 
   ngOnInit() {
  this.projects = this.projectListService.projects;
+ console.log(this.projects.length);
   }
   componentChange(changeManager) {
     this.menuChanger = changeManager;

@@ -10,6 +10,13 @@
   </div>
 
   <div>
+    <div class="upperGrey">
+      <div class="thisWeek">THIS WEEK: SOME SEC <i class="fa fa-caret-down symbol"></i></div>
+      <div class="noProject"><b>(NO PROJECT)</b></div>
+      <div class="line"></div>
+    </div>
+
+
     <app-project-list
       *ngFor="let proj of projects"
       [project]="proj"

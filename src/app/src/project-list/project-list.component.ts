@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ProjectListService} from '../../projectList.service';
 
 
 @Component({
@@ -17,4 +16,3 @@ export class ProjectListComponent implements OnInit {
   }
 
 }
-// private projectListService: ProjectListService
