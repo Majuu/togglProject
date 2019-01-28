@@ -1,6 +1,15 @@
 <div class="upperWhite">
-  <div class="projectName">{{project.name}}</div>
+  <div class="projectName">{{project.name}}<i class="fa fa-folder folderStyle"></i></div>
+
+  <div>
+  <div class="blockMe">
+  <div class="rightTurnOn"><i class="fa fa-ellipsis-v"></i></div>
+  <div class="rightTurnOn"><i class="fa fa-play "></i></div>
+
+  </div>
   <div class="projectTime">{{project.time}}</div>
   <div class="currentTime">{{ today | date: 'shortTime' }} - {{ today | date: 'shortTime' }}</div>
+  <div class="leftTurnOn"><i class="fa fa-dollar"></i></div>
+  <div class="leftTurnOn"><i class="fa fa-tag "></i></div>
+  </div>
 </div>
-

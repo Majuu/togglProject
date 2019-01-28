@@ -26,7 +26,6 @@ export class TimerComponent implements OnInit {
   }
 
   ngOnInit() {
-    document.body.style.backgroundColor = 'white';
     this.secondsDisplay = this.getSeconds(this.ticks);
     this.minutesDisplay = this.getMinutes(this.ticks);
     this.hoursDisplay = this.getHours(this.ticks);
@@ -90,7 +89,6 @@ export class TimerComponent implements OnInit {
 
   onCreateProject(projectName: string, projectTime: string) {
     this.projectListService.addProject(projectName, projectTime);
-
     this.secondsDisplay = '00';
     this.minutesDisplay = '00';
     this.hoursDisplay = '0';
