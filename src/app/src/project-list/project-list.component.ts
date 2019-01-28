@@ -9,6 +9,8 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ProjectListComponent implements OnInit {
   @Input() project: {name: string, time: string};
 
+  today: number = Date.now();
+
   constructor() { }
 
   ngOnInit() {

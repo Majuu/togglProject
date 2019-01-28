@@ -24,3 +24,54 @@
   margin-top: 45px;
   margin-left: 20px
 }
+
+.upperWhite {
+  width: 100%;
+  height: 50px;
+  background-color: #FFFFFF;
+}
+
+.dateCustom {
+  font-size: 13px;
+  float: left;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.timeCustom {
+  font-size: 15px;
+  float: right;
+  margin-right: 35px;
+  margin-top: 15px
+}
+
+.upperWhiteButton {
+  color: #CECECE;
+  font-size: 15px;
+  float: right;
+  margin-right: 20px;
+  margin-top: 8px;
+  padding: 7px;
+  border: 1px solid #F3F3F3;
+  border-radius: 8px;
+}
+.loadMore {
+  background-color: #FAFBFC;
+  width: 100%;
+  height: 70px;
+  align-items: center;
+  padding-top: 30px;
+}
+.loadMoreButton {
+  margin-left: 47%;
+  padding-top: 6px;
+  text-align: center;
+  width: 110px;
+  height: 35px;
+  font-size: 14px;
+  background-color: #FFFFFF;
+  border: 1px solid #F3F3F3;
+  border-radius: 7px;
+  cursor: not-allowed;
+
+}

@@ -10,17 +10,25 @@
   </div>
 
   <div>
-    <div class="upperGrey">
+    <div class="upperGrey" *ngIf="projects.length>0">
       <div class="thisWeek">THIS WEEK: SOME SEC <i class="fa fa-caret-down symbol"></i></div>
       <div class="noProject"><b>(NO PROJECT)</b></div>
       <div class="line"></div>
     </div>
 
+    <div class="upperWhite" *ngIf="projects.length>0">
+      <div class="dateCustom"><b>{{ today | date: 'shortDate' }}</b></div>
+      <div class="upperWhiteButton"><a class="fa fa-list-ul"></a></div>
+      <div class="timeCustom"><b>0:00:00</b></div>
+    </div>
 
     <app-project-list
       *ngFor="let proj of projects"
       [project]="proj"
     ></app-project-list>
+  </div>
+  <div class="loadMore">
+    <div class="loadMoreButton">Load more</div>
   </div>
 
 </div>

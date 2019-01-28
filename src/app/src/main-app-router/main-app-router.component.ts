@@ -8,15 +8,20 @@ import {ProjectListService} from '../../projectList.service';
 })
 export class MainAppRouterComponent implements OnInit {
 
-  projects: {name: string, time: string}[] = [];
+  projects: { name: string, time: string }[] = [];
   menuChanger: boolean;
-  constructor(private projectListService: ProjectListService) { }
+  today: number = Date.now();
+
+  constructor(private projectListService: ProjectListService) {
+  }
 
   ngOnInit() {
- this.projects = this.projectListService.projects;
- console.log(this.projects.length);
+    this.projects = this.projectListService.projects;
+    console.log(this.projects.length);
   }
+
   componentChange(changeManager) {
     this.menuChanger = changeManager;
-}
+  }
+
 }

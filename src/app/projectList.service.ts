@@ -6,15 +6,15 @@ export class ProjectListService {
   projects = [
     {
       name: 'Test 1',
-      time: '00:12:23'
+      time: '0:12:23'
     },
     {
       name: 'Test 2',
-      time: '00:23:34'
+      time: '0:23:34'
     },
     {
       name: 'Test 3',
-      time: '00:34:45'
+      time: '0:34:45'
     }
   ];
 
