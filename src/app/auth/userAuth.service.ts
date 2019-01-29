@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {User} from './user.model';
-import { Router } from '@angular/router';
+import {Router} from '@angular/router';
 
 export interface Config {
   someUrl: string;
@@ -18,7 +18,8 @@ export class UserAuthService {
 
 
   constructor(private http: HttpClient,
-   private myRoute: Router) {  }
+              private myRoute: Router) {
+  }
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -28,8 +29,8 @@ export class UserAuthService {
   };
 
   // REGISTRATION
-  addUser(user: User): Observable<User> {
-    return this.http.post<User>(this.usersUrl, user, this.httpOptions);
+  addUser(user: User): Observable<any> {
+    return this.http.post(this.usersUrl, user, this.httpOptions);
   }
 
   // LOGIN

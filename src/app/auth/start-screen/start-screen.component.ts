@@ -33,7 +33,7 @@ export class StartScreenComponent implements OnInit {
     this.authService.logUser(newUser)
       .subscribe(resp => {
 
-        // display its headers
+        // display headers
         const keys = resp.headers.keys();
         this.headers = keys.map(key =>
           `${key}: ${resp.headers.get(key)}`);
@@ -52,7 +52,6 @@ export class StartScreenComponent implements OnInit {
 
 
   }
-
 
 
 }

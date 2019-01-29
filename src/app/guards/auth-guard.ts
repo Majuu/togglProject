@@ -3,8 +3,6 @@ import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router} from '
 import {Observable} from 'rxjs';
 import {UserAuthService} from '../auth/userAuth.service';
 
-// import {AuthService} from './auth2.service';
-
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -17,9 +15,7 @@ export class AuthGuard implements CanActivate {
     if (this.auth.isLoggedIn()) {
       return true;
     } else {
-      // navigate to login page
       this.myRoute.navigate(['/login']);
-      // you can save redirect url so after authing we can move them back to the page they requested
       return false;
     }
   }

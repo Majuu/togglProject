@@ -12,8 +12,12 @@ export class NavbarStartComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-this.changeColorGreen();
-// console.log(this.router.url);
+    if (document.URL.includes('signup')) {
+      this.changeColorPink();
+    }
+    if (document.URL.includes('login')) {
+      this.changeColorGreen();
+    }
   }
   changeColorGreen() {
     document.body.style.backgroundColor = '#88CF8F';
