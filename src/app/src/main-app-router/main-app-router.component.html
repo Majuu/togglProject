@@ -27,7 +27,7 @@
       [project]="proj"
     ></app-project-list>
   </div>
-  <div class="loadMore">
+  <div class="loadMore" *ngIf="projects.length>0">
     <div class="loadMoreButton">Load more</div>
   </div>
 

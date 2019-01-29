@@ -7,6 +7,7 @@ import {LoggingStartComponent} from './auth/logging-start.component';
 import {RunningAppComponent} from './src/running-app.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {MainAppRouterComponent} from './src/main-app-router/main-app-router.component';
+import {AuthGuard} from './guards/auth-guard';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -18,7 +19,7 @@ const appRoutes: Routes = [
     ]
   },
   {
-    path: 'home', component: RunningAppComponent, children: [
+    path: 'home', component: RunningAppComponent, canActivate: [AuthGuard], children: [
       {
         path: '', redirectTo: 'timer', pathMatch: 'full'
       },

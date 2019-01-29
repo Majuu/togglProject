@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Config, UserAuthService} from '../userAuth.service';
+import {UserAuthService} from '../userAuth.service';
 import {User} from '../user.model';
 import {HttpClient} from '@angular/common/http';
-import * as cookies from 'browser-cookies';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-start-screen',
@@ -14,25 +14,15 @@ export class StartScreenComponent implements OnInit {
   emailAddress: string;
   passwordSet: string;
   headers: string[];
-  config: Config;
-  allCookies: string;
-
+  cookieValue: string;
 
   constructor(private authService: UserAuthService,
-              private http: HttpClient) {
+              private http: HttpClient,
+              private myRoute: Router) {
   }
 
   ngOnInit() {
   }
-
-  getCookie(c_name) {
-    return localStorage.getItem(c_name);
-  }
-
-  setCookie(c_name, value, expiredays) {
-    return localStorage.setItem(c_name, value);
-  }
-
 
   logMeIn(email: string, password: string) {
 
@@ -48,25 +38,21 @@ export class StartScreenComponent implements OnInit {
         this.headers = keys.map(key =>
           `${key}: ${resp.headers.get(key)}`);
 
-        // access the body directly, which is typed as `Config`.
-        this.config = { ... resp.body };
-        console.log(this.headers);
 
-        // this.getCookie('Set-Cookie');
+        for (const key of keys) {
+          if (key === 'auth-cookie') {
+            this.cookieValue = resp.headers.get(keys[11]).split(';')[0];
+            document.cookie = this.cookieValue;
 
-
-
-
-
-
-
-
-        // this.allCookies = document.cookie;
-        // console.log(this.allCookies);
-        // console.log(typeof this.allCookies);
-        // console.log(this.allCookies.length);
+            this.authService.sendToken(this.emailAddress);
+            this.myRoute.navigate(['home']);
+          }
+        }
       });
+
+
   }
+
 
 
 }

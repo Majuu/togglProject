@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpResponse} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {User} from './user.model';
-
+import { Router } from '@angular/router';
 
 export interface Config {
   someUrl: string;
@@ -16,29 +16,43 @@ export class UserAuthService {
   usersUrl = 'http://localhost:5000/auth/register';
   loggingUrl = 'http://localhost:5000/auth/login';
 
-  // private handleError: HandleError;
 
   constructor(private http: HttpClient,
-  ) {
-  }
+   private myRoute: Router) {  }
 
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     }),
     observe: 'response' as 'body',
-    withCredentials: true
   };
 
   // REGISTRATION
   addUser(user: User): Observable<User> {
-    // console.log(this.usersUrl);
     return this.http.post<User>(this.usersUrl, user, this.httpOptions);
   }
 
   // LOGIN
   logUser(user: User): Observable<any> {
-    // console.log(this.usersUrl);
     return this.http.post(this.loggingUrl, user, this.httpOptions);
   }
+
+
+  sendToken(token: string) {
+    localStorage.setItem('LoggedInUser', token);
+  }
+
+  getToken() {
+    return localStorage.getItem('LoggedInUser');
+  }
+
+  isLoggedIn() {
+    return this.getToken() !== null;
+  }
+
+  logout() {
+    localStorage.removeItem('LoggedInUser');
+    this.myRoute.navigate(['login']);
+  }
+
 }

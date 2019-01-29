@@ -20,7 +20,7 @@
       </div>
 
 
-      <div class="redButton" role="button" routerLink="/home">
+      <div class="redButton" role="button" (click)="logMeIn(emailAddress, passwordSet); ; passwordSet = ''">
         <p class="redButtonFill"><b>LOG IN <i class="fa fa-caret-right"></i></b></p>
       </div>
 
@@ -28,7 +28,7 @@
         <p class="orStyle"><b>OR</b></p>
       </div>
 
-      <div class="whiteButton" role="button" (click)="logMeIn(emailAddress, passwordSet)">
+      <div class="whiteButton" role="button">
         <p class="whiteButtonFill"><b><i class="fa fa-google"></i> LOG IN WITH GOOGLE <i class="fa fa-caret-right"></i></b>
         </p>
       </div>

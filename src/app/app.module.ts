@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {UserAuthService} from './auth/userAuth.service';
 import {HttpErrorHandler} from './auth/http-error-handler.service';
 import {MessageService} from './auth/message.service';
+import {AuthGuard} from './guards/auth-guard';
 
 
 
@@ -47,7 +48,7 @@ import {MessageService} from './auth/message.service';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [ProjectListService, UserAuthService, HttpErrorHandler, MessageService],
+  providers: [ProjectListService, UserAuthService, HttpErrorHandler, MessageService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
