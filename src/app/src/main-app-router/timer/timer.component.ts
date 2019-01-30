@@ -98,7 +98,8 @@ export class TimerComponent implements OnInit {
 
       projectName = resp.projectName;
       projectTime = resp.projectTime;
-      this.projectListService.addProject(projectName, projectTime);
+      const projectId = resp._id;
+      this.projectListService.addProject(projectName, projectTime, projectId);
     });
 
     this.secondsDisplay = '00';
@@ -113,13 +114,15 @@ export class TimerComponent implements OnInit {
 
         let projectName;
         let projectTime;
+        let projectId;
         const num = Object.keys(resp).length;
 
         for (let r = 0; r < num; r++) {  // <=!!!!
           projectName = resp[r].projectName;
           projectTime = resp[r].projectTime;
+          projectId = resp[r]._id;
 
-          this.projectListService.addProject(projectName, projectTime);
+          this.projectListService.addProject(projectName, projectTime, projectId);
         }
       }
     );
