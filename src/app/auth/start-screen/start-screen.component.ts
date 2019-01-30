@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {UserAuthService} from '../userAuth.service';
-import {User} from '../user.model';
+import {UserAuthService} from '../../../userAuth.service';
+import {User} from '../../../user.model';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 
@@ -14,7 +14,6 @@ export class StartScreenComponent implements OnInit {
   emailAddress: string;
   passwordSet: string;
   headers: string[];
-  cookieValue: string;
 
   constructor(private authService: UserAuthService,
               private http: HttpClient,
@@ -41,9 +40,11 @@ export class StartScreenComponent implements OnInit {
 
         for (const key of keys) {
           if (key === 'auth-cookie') {
-            this.cookieValue = resp.headers.get(keys[11]).split(';')[0];
-            document.cookie = this.cookieValue;
+            this.authService.myCookie = resp.headers.get(keys[11]).split(';')[0];
+            // document.cookie = this.authService.myCookie;
 
+
+            localStorage.setItem('Authorization', this.authService.myCookie);
             this.authService.sendToken(this.emailAddress);
             this.myRoute.navigate(['home']);
           }

@@ -26,11 +26,11 @@
         <label><input type="checkbox" value=""><b>I agree the terms of service and privacy policy</b></label>
       </div>
 
-      <div class="redButton" role="button" routerLink="/home">
+      <div class="redButton" role="button" (click)="setValue(emailAddress, passwordSet)">
         <p class="redButtonFill"><b>LOG IN <i class="fa fa-caret-right"></i></b></p>
       </div>
 
-      <div class="whiteButton" role="button" (click)="setValue(emailAddress, passwordSet)">
+      <div class="whiteButton" role="button">
         <p class="whiteButtonFill"><b><i class="fa fa-google"></i> LOG IN WITH GOOGLE <i
           class="fa fa-caret-right"></i></b></p>
       </div>

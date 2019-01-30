@@ -1,4 +1,4 @@
-interface userInterface {
+interface UserInterface {
 
   email: string;
   password: string;

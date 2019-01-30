@@ -1,6 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {timer} from 'rxjs';
 import {ProjectListService} from '../../../projectList.service';
+import {UserAuthService} from '../../../../userAuth.service';
+import Post from '../../../../post.model';
 
 
 @Component({
@@ -22,7 +24,8 @@ export class TimerComponent implements OnInit {
   time = timer(0, 1000);
   totalTime;
 
-  constructor(private projectListService: ProjectListService) {
+  constructor(private projectListService: ProjectListService,
+              private authService: UserAuthService) {
   }
 
   ngOnInit() {
@@ -88,7 +91,11 @@ export class TimerComponent implements OnInit {
   }
 
   onCreateProject(projectName: string, projectTime: string) {
-    this.projectListService.addProject(projectName, projectTime);
+    // this.projectListService.addProject(projectName, projectTime);
+
+    const newPost: Post = {projectName, projectTime} as Post;
+    this.authService.addPost(newPost).subscribe();
+
     this.secondsDisplay = '00';
     this.minutesDisplay = '00';
     this.hoursDisplay = '0';
@@ -96,3 +103,13 @@ export class TimerComponent implements OnInit {
   }
 
 }
+
+//
+// ogMeIn(email: string, password: string) {
+//
+//   email = email.trim();
+//   password = password.trim();
+//
+//   const newUser: User = {email, password} as User;
+//   this.authService.logUser(newUser)
+//     .subscribe(resp => {
