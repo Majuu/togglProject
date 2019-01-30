@@ -64,6 +64,12 @@ export class UserAuthService {
     return this.http.post(this.postsUrl, post, this.httpOptionsWithCookie);
   }
 
+  getAllPosts() {
+    return this.http.get(this.postsUrl);
+  }
+
+
+
 
   // AUTHGUARD
 
@@ -81,6 +87,7 @@ export class UserAuthService {
 
   logout() {
     localStorage.removeItem('LoggedInUser');
+    localStorage.removeItem('Authorization');
     this.myRoute.navigate(['login']);
   }
 

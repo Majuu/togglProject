@@ -33,7 +33,8 @@ export class TimerComponent implements OnInit {
     this.minutesDisplay = this.getMinutes(this.ticks);
     this.hoursDisplay = this.getHours(this.ticks);
     this.totalTime = this.hoursDisplay + ':' + this.minutesDisplay + ':' + this.secondsDisplay;
-
+    this.projectListService.projects.length = 0;
+    this.getTaskList();
   }
 
   public startTimer() {
@@ -90,26 +91,39 @@ export class TimerComponent implements OnInit {
     this.subscription.unsubscribe();
   }
 
-  onCreateProject(projectName: string, projectTime: string) {
-    // this.projectListService.addProject(projectName, projectTime);
+  onCreateProject = async (projectName: string, projectTime: string) => {
 
     const newPost: Post = {projectName, projectTime} as Post;
-    this.authService.addPost(newPost).subscribe();
+    this.authService.addPost(newPost).subscribe(resp => {
+
+      projectName = resp.projectName;
+      projectTime = resp.projectTime;
+      this.projectListService.addProject(projectName, projectTime);
+    });
 
     this.secondsDisplay = '00';
     this.minutesDisplay = '00';
     this.hoursDisplay = '0';
     this.totalTime = this.hoursDisplay + ':' + this.minutesDisplay + ':' + this.secondsDisplay;
+  };
+
+  getTaskList() {
+    this.authService.getAllPosts().subscribe(
+      resp => {
+
+        let projectName;
+        let projectTime;
+        const num = Object.keys(resp).length;
+
+        for (let r = 0; r < num; r++) {  // <=!!!!
+          projectName = resp[r].projectName;
+          projectTime = resp[r].projectTime;
+
+          this.projectListService.addProject(projectName, projectTime);
+        }
+      }
+    );
+
   }
 
 }
-
-//
-// ogMeIn(email: string, password: string) {
-//
-//   email = email.trim();
-//   password = password.trim();
-//
-//   const newUser: User = {email, password} as User;
-//   this.authService.logUser(newUser)
-//     .subscribe(resp => {
