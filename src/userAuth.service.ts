@@ -36,9 +36,7 @@ export class UserAuthService {
       'Content-Type': 'application/json',
       // 'Cookie': document.cookie,
       'Authorization': localStorage.getItem('Authorization'),
-      // 'Auth-Cookie': this.myCookie,
     }),
-    // withCredentials: true
   };
 
 
@@ -67,8 +65,6 @@ export class UserAuthService {
   getAllPosts() {
     return this.http.get(this.postsUrl);
   }
-
-
 
 
   // AUTHGUARD

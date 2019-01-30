@@ -33,8 +33,6 @@ export class TimerComponent implements OnInit {
     this.minutesDisplay = this.getMinutes(this.ticks);
     this.hoursDisplay = this.getHours(this.ticks);
     this.totalTime = this.hoursDisplay + ':' + this.minutesDisplay + ':' + this.secondsDisplay;
-    this.projectListService.projects.length = 0;
-    this.getTaskList();
   }
 
   public startTimer() {
@@ -91,7 +89,7 @@ export class TimerComponent implements OnInit {
     this.subscription.unsubscribe();
   }
 
-  onCreateProject = async (projectName: string, projectTime: string) => {
+  onCreateProject(projectName: string, projectTime: string) {
 
     const newPost: Post = {projectName, projectTime} as Post;
     this.authService.addPost(newPost).subscribe(resp => {
@@ -107,26 +105,4 @@ export class TimerComponent implements OnInit {
     this.hoursDisplay = '0';
     this.totalTime = this.hoursDisplay + ':' + this.minutesDisplay + ':' + this.secondsDisplay;
   };
-
-  getTaskList() {
-    this.authService.getAllPosts().subscribe(
-      resp => {
-
-        let projectName;
-        let projectTime;
-        let projectId;
-        const num = Object.keys(resp).length;
-
-        for (let r = 0; r < num; r++) {  // <=!!!!
-          projectName = resp[r].projectName;
-          projectTime = resp[r].projectTime;
-          projectId = resp[r]._id;
-
-          this.projectListService.addProject(projectName, projectTime, projectId);
-        }
-      }
-    );
-
-  }
-
 }
