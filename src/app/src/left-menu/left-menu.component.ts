@@ -21,4 +21,8 @@ export class LeftMenuComponent implements OnInit {
     this.authService.logout();
   }
 
+  showMessage() {
+    alert('Menu button clicked, yet nothing happens...');
+  }
 }
+

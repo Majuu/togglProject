@@ -6,10 +6,10 @@ import {User} from './user.model';
 import {Router} from '@angular/router';
 import Post from './post.model';
 
-export interface Config {
-  someUrl: string;
-  textfile: string;
-}
+// export interface Config {
+//   someUrl: string;
+//   textfile: string;
+// }
 
 @Injectable()
 export class UserAuthService {
@@ -34,7 +34,6 @@ export class UserAuthService {
   httpOptionsWithCookie = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      // 'Cookie': document.cookie,
       'Authorization': localStorage.getItem('Authorization'),
     }),
   };
@@ -62,8 +61,17 @@ export class UserAuthService {
     return this.http.post(this.postsUrl, post, this.httpOptionsWithCookie);
   }
 
+  // GET ALL TASKS
+
   getAllPosts() {
     return this.http.get(this.postsUrl);
+  }
+
+  // DELETE TASK
+
+  deletePost(taskId: string): Observable<any>  {
+    const deleteUrl = this.postsUrl + '/' + taskId;
+    return this.http.delete(deleteUrl, this.httpOptionsWithCookie);
   }
 
 
