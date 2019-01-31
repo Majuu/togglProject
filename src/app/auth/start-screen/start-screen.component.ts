@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {UserAuthService} from '../../../userAuth.service';
-import {User} from '../../../user.model';
+import {UserAuthService} from '../../../services/userAuth.service';
+import {User} from '../../../user/user.model';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 

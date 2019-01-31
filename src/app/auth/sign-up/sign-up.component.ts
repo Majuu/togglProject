@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {UserAuthService} from '../../../userAuth.service';
-import {User} from '../../../user.model';
+import {UserAuthService} from '../../../services/userAuth.service';
+import {User} from '../../../user/user.model';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 
@@ -14,6 +14,7 @@ export class SignUpComponent implements OnInit {
   emailAddress: string;
   passwordSet: string;
   headers: string[];
+  checkbox = true;
 
   constructor(private authService: UserAuthService,
               private http: HttpClient,
@@ -49,6 +50,8 @@ export class SignUpComponent implements OnInit {
       });
 
   }
-
+changeCheckBox () {
+  this.checkbox = !this.checkbox;
+}
 
 }

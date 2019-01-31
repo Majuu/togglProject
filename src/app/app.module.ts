@@ -16,9 +16,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import {ProjectListComponent} from './src/project-list/project-list.component';
 import {ManualModeComponent} from './src/main-app-router/manual-mode/manual-mode.component';
 import { MainAppRouterComponent } from './src/main-app-router/main-app-router.component';
-import {ProjectListService} from './projectList.service';
+import {ProjectListService} from '../services/projectList.service';
 import { HttpClientModule } from '@angular/common/http';
-import {UserAuthService} from '../userAuth.service';
+import {UserAuthService} from '../services/userAuth.service';
 import {AuthGuard} from './guards/auth-guard';
 
 

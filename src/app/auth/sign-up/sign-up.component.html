@@ -8,27 +8,43 @@
     <div class="formLabel">
 
       <div align="center">
-        <label  class="dataLabel"><b>EMAIL ADDRESS</b></label>
+        <label class="dataLabel"><b>EMAIL ADDRESS</b></label>
         <input [(ngModel)]="emailAddress" #ctrl="ngModel" type="text"
-               id="email"
-               class="form-control forms" required>
+               id="email" name="emailAddress"
+               class="forms">
       </div>
+
+      <label class="dataLabelAlert" *ngIf="!emailAddress"><b>Please enter a valid email address</b></label>
+      <label class="dataLabelAlert" *ngIf="emailAddress"></label>
 
       <div align="center">
         <label class="dataLabel2"><b> SET A PASSWORD</b></label>
-        <input  [(ngModel)]="passwordSet" #ctrl="ngModel" type="password"
+        <input [(ngModel)]="passwordSet" #ctrl="ngModel" type="password"
                id="password"
-               class="form-control forms" required>
+               class="forms" required>
+      </div>
+
+      <label class="dataLabelAlert" *ngIf="!passwordSet"><b>A password is required</b></label>
+      <label class="dataLabelAlert" *ngIf="passwordSet"></label>
+
+
+      <div class="checkboxAdd">
+        <label class="container"><b class="agree">I agree the terms of service and privacy policy</b>
+          <input type="checkbox" id="checkbox" name="checkbox" (click)=changeCheckBox()>
+          <span class="checkmark"></span>
+        </label>
       </div>
 
 
-      <div class="checkbox checkboxAdd">
-        <label><input type="checkbox" value=""><b>I agree the terms of service and privacy policy</b></label>
+      <div class="redButton" role="button" *ngIf="checkbox">
+        <p class="redButtonFill"><b>SIGN UP FOR FREE <i class="fa fa-caret-right"></i></b></p>
       </div>
 
-      <div class="redButton" role="button" (click)="setValue(emailAddress, passwordSet)">
-        <p class="redButtonFill"><b>LOG IN <i class="fa fa-caret-right"></i></b></p>
+      <div class="redButton" role="button" *ngIf="!checkbox" (click)="setValue(emailAddress, passwordSet)">
+        <p class="redButtonFill"><b>SIGN UP FOR FREE <i class="fa fa-caret-right"></i></b></p>
       </div>
+
+
 
       <div class="whiteButton" role="button">
         <p class="whiteButtonFill"><b><i class="fa fa-google"></i> LOG IN WITH GOOGLE <i

@@ -2,9 +2,9 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {User} from './user.model';
+import {User} from '../user/user.model';
 import {Router} from '@angular/router';
-import Post from './post.model';
+import Post from '../post.model';
 
 // export interface Config {
 //   someUrl: string;
@@ -69,7 +69,7 @@ export class UserAuthService {
 
   // DELETE TASK
 
-  deletePost(taskId: string): Observable<any>  {
+  deletePost(taskId: string): Observable<any> {
     const deleteUrl = this.postsUrl + '/' + taskId;
     return this.http.delete(deleteUrl, this.httpOptionsWithCookie);
   }

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ProjectListService} from '../../projectList.service';
+import {ProjectListService} from '../../../services/projectList.service';
 
 @Component({
   selector: 'app-main-app-router',
@@ -25,5 +25,5 @@ export class MainAppRouterComponent implements OnInit {
     this.menuChanger = changeManager;
   }
 
-  
+
 }

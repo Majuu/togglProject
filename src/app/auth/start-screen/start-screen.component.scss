@@ -46,6 +46,13 @@
     @include logsLabel();
     margin: 100px auto auto;
   }
+  .dataLabelAlert {
+    @include logsLabel();
+    font-size: 14px;
+    color: #E24F54;
+    height: 5px;
+
+  }
   .passwordLabel {
     margin-top: 55px
   }
@@ -54,12 +61,21 @@
   background-color: #E3E8EB;
   width: 65%;
   margin: auto;
-  height: 70px
+  height: 70px;
+  font-size: 18px;
+  border: none;
+  border-radius: 7px;
+  outline: none;
+  padding-left: 15px;
+
+}
+input:focus {
+  border: #88CF8F 2px solid;
 }
 .redButton {
   @include button();
   cursor: pointer;
-  margin: 120px auto auto;
+  margin: 85px auto auto;
   background-color: #E24F54;
 
   .redButtonFill {
@@ -79,12 +95,7 @@
     @include buttonFill();
   }
 }
-.textForm {
-  background-color: #E3E8EB;
-  width: 65%;
-  margin: auto;
-  height: 70px
-}
+
 .orStyle {
   color: #A2A2A2;
   font-size: 14px;

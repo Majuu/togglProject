@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {UserAuthService} from '../../../userAuth.service';
-import {ProjectListService} from '../../projectList.service';
-import {MainAppRouterComponent} from '../main-app-router/main-app-router.component';
+import {UserAuthService} from '../../../services/userAuth.service';
+import {ProjectListService} from '../../../services/projectList.service';
 
 
 @Component({
@@ -15,8 +14,7 @@ export class ProjectListComponent implements OnInit {
   today: number = Date.now();
 
   constructor(private authService: UserAuthService,
-              private projectListService: ProjectListService,
-              private mainAppRouter: MainAppRouterComponent) {
+              private projectListService: ProjectListService) {
   }
 
   ngOnInit() {

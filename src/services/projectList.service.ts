@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {UserAuthService} from '../userAuth.service';
+import {UserAuthService} from './userAuth.service';
 
 @Injectable()
 export class ProjectListService {

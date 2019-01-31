@@ -51,12 +51,28 @@
     @include logsLabel();
     margin: 55px auto auto;
   }
+  .dataLabelAlert {
+    @include logsLabel();
+    font-size: 14px;
+    color: #E24F54;
+    height: 5px;
+
+  }
 }
 .forms {
   background-color: #E3E8EB;
   width: 65%;
   margin: auto;
-  height: 70px
+  height: 70px;
+  font-size: 18px;
+  border: none;
+  border-radius: 7px;
+  outline: none;
+  padding-left: 15px;
+
+}
+input:focus {
+  border: #88CF8F 2px solid;
 }
 .redButton {
   cursor: pointer;
@@ -82,5 +98,78 @@
   }
 }
 .checkboxAdd {
-  margin-top: 10%
+  margin-top: 10%;
+  margin-left: 18%;
+  margin-right: 20%;
+}
+
+
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  height: 45px;
+  width: 45px;
+  background-color: #E3E8EB;
+  border-radius: 15%;
+  border: #E24F54 2px solid;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #E3E8EB;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  border: #88CF8F 2px solid;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 15px;
+  top: 4px;
+  width: 12px;
+  height: 25px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.agree {
+  padding-left: 10%
 }

@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {timer} from 'rxjs';
-import {ProjectListService} from '../../../projectList.service';
-import {UserAuthService} from '../../../../userAuth.service';
+import {ProjectListService} from '../../../../services/projectList.service';
+import {UserAuthService} from '../../../../services/userAuth.service';
 import Post from '../../../../post.model';
 
 

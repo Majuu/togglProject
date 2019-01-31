@@ -7,20 +7,27 @@
 
     <div class="formLabel">
 
+
       <div>
         <label class="dataLabel"><b>EMAIL ADDRESS</b></label>
-        <input [(ngModel)]="emailAddress" #ctrl="ngModel" type="text"
+        <input [(ngModel)]="emailAddress" name="emailAddress" #ctrl="ngModel" type="text"
                id="email"
-               class="form-control textForm">
+               class="forms" required="required">
+
+        <label class="dataLabelAlert" *ngIf="!emailAddress"><b>Please enter a valid email address</b></label>
+        <label class="dataLabelAlert" *ngIf="emailAddress"></label>
 
         <label class="dataLabel passwordLabel"><b>PASSWORD</b></label>
-        <input [(ngModel)]="passwordSet" #ctrl="ngModel" type="password"
+        <input [(ngModel)]="passwordSet" name="passwordSet" #ctrl="ngModel" type="password"
                id="password"
-               class="form-control textForm">
+               class="forms">
+
+        <label class="dataLabelAlert" *ngIf="!passwordSet"><b>This field is required</b></label>
+        <label class="dataLabelAlert" *ngIf="passwordSet"></label>
       </div>
 
 
-      <div class="redButton" role="button" (click)="logMeIn(emailAddress, passwordSet); passwordSet = ''">
+      <div class="redButton" role="button" (click)="logMeIn(emailAddress, passwordSet);">
         <p class="redButtonFill"><b>LOG IN <i class="fa fa-caret-right"></i></b></p>
       </div>
 
