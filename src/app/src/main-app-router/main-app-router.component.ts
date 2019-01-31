@@ -16,8 +16,8 @@ export class MainAppRouterComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.projects = this.projectListService.projects;
     this.projectListService.getTaskList();
+    this.projects = this.projectListService.projects;
     document.body.style.backgroundColor = '#FAFBFC';
   }
 
