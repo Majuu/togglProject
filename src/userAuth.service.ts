@@ -74,7 +74,6 @@ export class UserAuthService {
     return this.http.delete(deleteUrl, this.httpOptionsWithCookie);
   }
 
-
   // AUTHGUARD
 
   sendToken(token: string) {
